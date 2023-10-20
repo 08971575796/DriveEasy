@@ -4,7 +4,434 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ .sign-in {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow: hidden;
+}
+
+.sign-in .div {
+  background-color: #ffffff;
+  width: 1250px;
+  height: 1024px;
+  position: relative;
+}
+
+.sign-in .overlap {
+  position: absolute;
+  width: 576px;
+  height: 1024px;
+  top: 0;
+  left: 674px;
+  background-color: #ffe688;
+}
+
+.sign-in .element-being-happy {
+  position: absolute;
+  width: 477px;
+  height: 477px;
+  top: 110px;
+  left: 49px;
+  background-image: url(./img/beinghappy.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.sign-in .welcome-to-driveeasy {
+  position: absolute;
+  top: 290px;
+  left: 136px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .text-wrapper {
+  color: #333333;
+  top: -240px;
+  position: relative;
+}
+
+.sign-in .span {
+  color: #ff8a2c;
+  position: relative;
+  top: -250px;
+}
+
+.sign-in .group {
+  position: absolute;
+  width: 452px;
+  height: 444px;
+  top: 291px;
+  left: 128px;
+}
+
+.sign-in .frame {
+  position: absolute;
+  width: 450px;
+  height: 383px;
+  top: 0;
+  left: 0;
+}
+
+.sign-in .frame-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  top: -200px;
+}
+
+.sign-in .text-wrapper-2 {
+  margin-top: -1px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 36px;
+  position: relative;
+  width: fit-content;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .frame-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.sign-in .text-input {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.sign-in .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .overlap-group-wrapper {
+  position: relative;
+  width: 452px;
+  height: 50px;
+  margin-right: -2px;
+}
+
+.sign-in .overlap-group {
+  position: relative;
+  width: 450px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border-radius: 16px;
+}
+
+.sign-in .bagilink-id-username {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #adadad;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .ant-design-eye {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 17px;
+  left: 418px;
+}
+
+.sign-in .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #ff8a2c;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .button {
+  display: flex;
+  width: 450px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 201px;
+  position: relative;
+  background-color: #ffae6d;
+  border-radius: 16px;
+  all: unset;
+  box-sizing: border-box;
+}
+
+.sign-in .text-wrapper-5 {
+  margin-top: -0.5px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  width: fit-content;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .not-registered-yet {
+  position: absolute;
+  top: 423px;
+  left: 90px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-in .text-wrapper-6 {
+  color: #000000;
+  position: relative;
+  top: -250px;
+}
+
+.sign-in .text-wrapper-7 {
+  color: #ff8a2d;
+  position: relative;
+  top: -250px;
+}
+
+ 
+ .sign-up {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.sign-up .div {
+  background-color: #ffffff;
+  width: 1250px;
+  height: 1024px;
+  position: relative;
+}
+
+.sign-up .overlap {
+  position: sticky;
+  width: 540px;
+  height: 1024px;
+  top: 0;
+  left: 674px;
+  background-color: #01d28e;
+}
+
+.sign-up .element-being-happy {
+  position: absolute;
+  width: 477px;
+  height: 477px;
+  top: 535px;
+  left: 49px;
+  background-image: url(./img/being-happy.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.sign-up .welcome-to-driveeasy {
+  position: absolute;
+  top: 290px;
+  left: 136px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-up .text-wrapper {
+  color: #333333;
+}
+
+.sign-up .span {
+  color: #ff8a2c;
+}
+
+.sign-up .frame {
+  align-items: center;
+  gap: 40px;
+  position: absolute;
+  top: 251px;
+  left: 123px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.sign-up .frame-2 {
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.sign-up .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-up .frame-3 {
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.sign-up .text-input {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.sign-up .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-up .group {
+  position: relative;
+  width: 452px;
+  height: 50px;
+  margin-right: -2px;
+}
+
+.sign-up .overlap-group {
+  position: relative;
+  width: 450px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border-radius: 16px;
+}
+
+.sign-up .bagilink-id-username {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #adadad;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-up .ant-design-eye {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 17px;
+  left: 418px;
+}
+
+.sign-up .button {
+  display: flex;
+  width: 450px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 201px;
+  position: relative;
+  background-color: #ffae6d;
+  border-radius: 16px;
+  all: unset;
+  box-sizing: border-box;
+}
+
+.sign-up .sign-in {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.5px;
+  margin-left: -3px;
+  margin-right: -3px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-up .already-have-an {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sign-up .text-wrapper-4 {
+  color: #000000;
+}
+
+.sign-up .text-wrapper-5 {
+  color: #ff8a2d;
+}
+
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -8967,7 +9394,9 @@ h1, h2, h3, h4, h5,
 
 .ftco-about {
   position: relative;
-  z-index: 0; }
+  z-index: 0;
+  overflow: hidden;
+}
   .ftco-about:after {
     position: absolute;
     top: 0;
