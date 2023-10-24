@@ -180,6 +180,8 @@
   font-size: 14px;
   letter-spacing: 0;
   line-height: normal;
+  top: 60px;
+  left: -60px;
 }
 
 .sign-in .button {
@@ -431,6 +433,396 @@
 
 .sign-up .text-wrapper-5 {
   color: #ff8a2d;
+}
+
+ .sign-up {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.sign-up .div {
+    background-color: #ffffff;
+    width: 1440px;
+    height: 1024px;
+    position: fixed;
+}
+
+.sign-up .overlap {
+    position: absolute;
+    width: 576px;
+    height: 1024px;
+    top: -150px;
+    left: 800px;
+    background-color: #ffe688;
+}
+
+.sign-up .element-being-happy {
+    position: absolute;
+    width: 477px;
+    height: 477px;
+    top: 360px;
+    left: 50px;
+    background-image: url(./img/beinghappy.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.sign-up .welcome-to-driveeasy {
+    position: absolute;
+    top: 250px;
+    left: 136px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: transparent;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-up .text-wrapper {
+    color: #333333;
+}
+
+.sign-up .span {
+    color: #ff8a2c;
+}
+
+.sign-up .frame {
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    top: 50px;
+    left: 207px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.sign-up .frame-2 {
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.sign-up .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-up .frame-3 {
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.sign-up .text-input {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-up .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-up .group {
+    position: relative;
+    width: 452px;
+    height: 50px;
+    margin-right: -2px;
+}
+
+.sign-up .overlap-group {
+    position: relative;
+    width: 450px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border-radius: 16px;
+}
+
+.sign-up .bagilink-id-username {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #adadad;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-up .ant-design-eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 410px;
+}
+
+.sign-up .button {
+    display: flex;
+    width: 450px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 201px;
+    position: relative;
+    background-color: #ffae6d;
+    border-radius: 16px;
+    all: unset;
+    box-sizing: border-box;
+}
+
+.sign-up .sign-in {
+    position: relative;
+    width: fit-content;
+    margin-top: -0.5px;
+    margin-left: -3px;
+    margin-right: -3px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-up .already-have-an {
+    position: relative;
+    width: fit-content;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    
+}
+
+.sign-up .text-wrapper-4 {
+    position: relative;
+    top: 80px;
+    color: #000000;
+}
+
+.sign-up .text-wrapper-5 {
+    position: relative;
+    top: 80px;
+    color: #ff8a2d;
+}
+
+.forgot-password {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.forgot-password .div {
+  background-color: #ffffff;
+  width: 1440px;
+  height: 1024px;
+  position: fixed;
+}
+
+.forgot-password .overlap {
+  position: absolute;
+  width: 576px;
+  height: 1024px;
+  top: 100px;
+  left: 864px;
+  background-color: #ffe688;
+  top: -150px;
+}
+
+.forgot-password .element-being-happy {
+  position: absolute;
+  width: 477px;
+  height: 477px;
+  top: 380px;
+  left: 25px;
+  background-image: url(./img/beinghappy.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.forgot-password .welcome-to-driveeasy {
+  position: absolute;
+  top: 290px;
+  left: 136px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.forgot-password .text-wrapper {
+  color: #333333;
+}
+
+.forgot-password .span {
+  color: #ff8a2c;
+}
+
+.forgot-password .frame {
+  align-items: center;
+  gap: 40px;
+  position: absolute;
+  top: 380px;
+  left: 207px;
+  display: inline-flex;
+  flex-direction: column;
+  top: 180px;
+}
+
+.forgot-password .frame-2 {
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.forgot-password .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.forgot-password .text-input-wrapper {
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.forgot-password .text-input {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.forgot-password .username {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.forgot-password .group {
+  position: relative;
+  width: 452px;
+  height: 50px;
+  margin-right: -2px;
+}
+
+.forgot-password .overlap-group {
+  position: relative;
+  width: 450px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border-radius: 16px;
+}
+
+.forgot-password .bagilink-id-username {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #adadad;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.forgot-password .button {
+  display: flex;
+  width: 450px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 201px;
+  position: relative;
+  background-color: #ffae6d;
+  border-radius: 16px;
+  all: unset;
+  box-sizing: border-box;
+}
+
+.forgot-password .sign-in {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.5px;
+  margin-left: -32px;
+  margin-right: -32px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.forgot-password .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #ff8a2d;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
 }
 
  :root {
@@ -9044,7 +9436,8 @@ h1, h2, h3, h4, h5,
   border-radius: 3px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  font-size: 15px; }
+  font-size: 15px;
+}
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
