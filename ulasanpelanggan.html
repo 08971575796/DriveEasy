@@ -45,7 +45,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tables</h6>
             <a class="collapse-item active" href="datapelanggan.html">Data Pelanggan</a>
-            <a class="collapse-item" href="datatransaksi.html">Data Transaksi</a>
+            <a class="collapse-item" href="datamobildantransaksi.html">Data Mobil & Transaksi</a>
           </div>
         </div>
       </li>
@@ -56,9 +56,9 @@
       </div>
      
       <li class="nav-item active">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="ulasanpelanggan.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
+          <span>Ulasan Pelanggan</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -78,18 +78,14 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Andhung Gusti</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-
+                
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
@@ -102,72 +98,49 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Charts</h1>
+            <h1 class="h3 mb-0 text-gray-800">Ulasan Pelanggan</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Charts</li>
+              <li class="breadcrumb-item active" aria-current="page">Ulasan Pelanggan</li>
             </ol>
           </div>
-          <!-- Row -->
-          <div class="row">
-            <!-- Area Charts -->
-            <div class="col-lg-12">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+            <div class="card">
+              <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-light">Kritik & Saran</h6>
+              </div>
+              <div>
+                <div class="customer-message align-items-center">
+                  <a class="font-weight-bold" href="#">
+                    <div class="text-truncate message-title">Tarif termurah dibanding sewa mobil manapun, kondisi mobil yg selalu bersih,wangi,dan keluaran terbaru, serta pelayanan yg sangat ramah menjadikan Rizky Shafira selalu diminati.Benar2 sewa mobil terbaik di Nganjuk</div>
+                    <div class="small text-gray-500 message-time font-weight-bold">Septia Andini · Sukomoro, Nganjuk</div>
+                  </a>
                 </div>
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                  <hr>
-                  Styling for the area chart can be found in the
-                  <code>/js/demo/chart-area-demo.js</code> file.
+                <div class="customer-message align-items-center">
+                  <a href="#">
+                    <div class="text-truncate message-title">Harga TerMurah dibandingkan Sewa Mobil yang lain, pelayanan juga ramah,mobilnya bersih dan baru semua. Recommended buat kalian yang cari sewa mobil di area Nganjuk
+                    </div>
+                    <div class="small text-gray-500 message-time">Shafira Nasywa · Pace, Nganjuk</div>
+                  </a>
+                </div>
+                <div class="customer-message align-items-center">
+                  <a class="font-weight-bold" href="#">
+                    <div class="text-truncate message-title">Pengalaman sewa disini sangat memuaskan selalu melayani dengan ramah sesuai kebutuhan dan sudah di jelaskan secara rinci mengenai BBM maupun km. Mobil bersih unit terbaru manteppppppp
+                    </div>
+                    <div class="small text-gray-500 message-time font-weight-bold">Ike Dyah A · Bagor, Nganjuk</div>
+                  </a>
+                </div>
+                <div class="customer-message align-items-center">
+                  <a class="font-weight-bold" href="#">
+                    <div class="text-truncate message-title">mantab jiwa
+                    </div>
+                    <div class="small text-gray-500 message-time font-weight-bold">Septian Yoga · Kertosono, Nganjuk</div>
+                  </a>
+                </div>
+                <div class="card-footer text-center">
+                  <a class="m-0 small text-primary card-link" href="#">View More <i
+                      class="fas fa-chevron-right"></i></a>
                 </div>
               </div>
-            </div>
-            <!-- Bar Chart -->
-            <div class="col-lg-8">
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                </div>
-                <div class="card-body">
-                  <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
-                  </div>
-                  <hr>
-                  Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
-                </div>
-              </div>
-            </div>
-            <!-- Donut Chart -->
-            <div class="col-lg-4">
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-                </div>
-                <div class="card-body">
-                  <div class="chart-pie pt-4">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <hr>
-                  Styling for the donut chart can be found in the <code>/js/demo/chart-pie-demo.js</code> file.
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--Row-->
-
-          <!-- Documentation Link -->
-          <div class="row">
-            <div class="col-lg-12">
-              <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The
-                charts below have been customized - for further customization options, please visit the <a
-                  target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
-            </div>
-          </div>
-
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
