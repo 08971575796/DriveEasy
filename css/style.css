@@ -1333,8 +1333,9 @@ pre {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: auto;
-  max-width: 100%; }
+  width: 130px;
+  max-width: 100%;
+  text-align: end; }
 
 .col-1 {
   -webkit-box-flex: 0;
