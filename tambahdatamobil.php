@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="images/logo/DriveEasy_putih.png" rel="icon">
-  <title>Drive Easy - Data Pelanggan</title>
+  <title>Drive Easy - Tambah Data Mobil</title>
   <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -18,7 +19,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
           <img src="images/logo/DriveEasy_putih.png">
         </div>
@@ -26,39 +27,39 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="dashboardadmin.html">
+        <a class="nav-link" href="dashboardadmin.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Features
+        Pendataan
       </div>
       
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
+          <span>Tabel</span>
         </a>
         <div id="collapseTable" class="collapse show" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item active" href="datapelanggan.html">Data Pelanggan</a>
-            <a class="collapse-item" href="datamobildantransaksi.html">Data Mobil & Transaksi</a>
+
+            <a class="collapse-item active" href="datapelanggan.php">Data Pelanggan</a>
+            <a class="collapse-item" href="datamobildantransaksi.php">Data Mobil & Transaksi</a>
           </div>
         </div>
       </li>
       
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
+        Ulasan
       </div>
      
       <li class="nav-item">
-        <a class="nav-link" href="ulasanpelanggan.html">
+        <a class="nav-link" href="ulasanpelanggan.php">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Ulasan Pelanggan</span>
+          <span>Kritik & Saran</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -77,20 +78,12 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Andhung Gusti</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
@@ -105,7 +98,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Data Pelanggan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Data Mobil</h1>
           </div>
 
           <div class="row">
@@ -114,21 +107,45 @@
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
-                  <button type="button" class="btn btn-primary">Tambah Data</button>
                 </div>
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Nama</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Alamat</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Telepon</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  
+                  <form>
+                    <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Nama</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputMerek1" class="form-label">Merek</label>
+                        <input type="text" class="form-control" id="exampleInputMerek1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputAlamat1" class="form-label">Warna</label>
+                      <input type="nama" class="form-control" id="exampleInputAlamat1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputTelepon1" class="form-label">Tahun</label>
+                      <input type="nama" class="form-control" id="exampleInputTelepon1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputTempatduduk1" class="form-label">Tempat duduk</label>
+                      <input type="text" class="form-control" id="exampleInputTempatduduk1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputhargasewa1" class="form-label">Harga Sewa</label>
+                      <input type="text" class="form-control" id="exampleInputhargasewa1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="datamobildantransaksi.php" class="btn btn-primary">Batal</a>
+                  </form>
                   </div>
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
-                  
                     </tbody>
                   </table>
                 </div>
@@ -154,7 +171,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.html" class="btn btn-primary">Logout</a>
+                  <a href="login.php" class="btn btn-primary">Logout</a>
                 </div>
               </div>
             </div>
@@ -168,7 +185,7 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+              <b><a target="_blank">Kelompok 4C</a></b>
             </span>
           </div>
         </div>

@@ -45,6 +45,8 @@
                         <span class="text-wrapper">Welcome to <br /></span> <span class="span">DriveEasy</span>
                     </p>
                 </div>
+
+                <form method="POST" action="prosesdaftar.php" autocomplete="off" name="register">
                 <div class="frame">
                     <div class="frame-2">
                         <div class="text-wrapper-2">Sign Up</div>
@@ -52,20 +54,20 @@
                             <div class="text-input">
                                 <div class="text-wrapper-3">Username</div>
                                 <div class="overlap-group-wrapper">
-                                    <div class="Username"></div><input type="email" class="overlap-group" id="floatingInput" placeholder="Username" >
+                                    <div class="Username"></div><input type="username" class="overlap-group" id="floatingInput" placeholder="Username" name="username" >
                                 </div>
                             </div>
                             <div class="text-input">
                                 <div class="text-wrapper-3">Email</div>
                                 <div class="group">
-                                    <div class="Email"><div ><input type="email" class="overlap-group" id="floatingInput" placeholder="Email" >
+                                    <div class="Email"><div ><input type="email" class="overlap-group" id="floatingInput" placeholder="Email" name="email">
                                     </div>
                             </div>
                             <div class="text-input">
                                 <div class="text-wrapper-3">Password</div>
                                 <div class="group">
                                     <div class="overlap-group">
-                                        <div class="password"></div><input type="password" class="overlap-group" id="floatingPassword" placeholder="Password">
+                                        <div class="password"></div><input type="password" class="overlap-group" id="floatingPassword" placeholder="Password" name="password">
                                         <img class="ant-design-eye" src="images/ant-design-eye-outlined.svg" />
                                     </div>
                                 </div>
@@ -76,10 +78,11 @@
                     </div>
                     <p class="already-have-an">
                         <span class="text-wrapper-4">Already have an account? </span> 
-                        <a href="/login.html">
+                        <a href="login.php">
                             <span class="text-wrapper-5">Sign In</div></span>
                         </a>
                     </p>
+                </form>
                 </div>
             </div>
         </div>

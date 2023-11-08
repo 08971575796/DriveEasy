@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,40 +53,42 @@
 <span class="text-wrapper">Welcome to <br /></span> <span class="span">DriveEasy</span>
 </p>
 </div>
-<div class="group">
-<div class="frame">
-<div class="frame-2">
-<div class="text-wrapper-2">Login</div>
-<div class="frame-3">
-<div class="text-input">
-<div class="text-wrapper-3">Username</div>
-<div class="overlap-group-wrapper">
-<div class="overlap-group"><div ><input type="email" class="overlap-group" id="floatingInput" placeholder="Username" >
-</div>
-</div>
-<div class="text-input">
-<div class="text-wrapper-3">Password</div>
-<div class="overlap-group-wrapper">
-  <div class="overlap-group">
-      <div class="bagilink-id-username"></div><input type="password" class="overlap-group" id="floatingPassword" placeholder="Password">
-      <img class="ant-design-eye" src="images/ant-design-eye-outlined.svg"/>
-</div>
-</div>
-</div>
-<button class="button"><div class="btn btn-warning"><a href="dashboardadmin.html" class="nav-link">Login</a></div></button>
-<a href="/lupapassword.html">
-<span class="text-wrapper-4">Forgot Password?</span>
-</a>
-</div>
-</div>
-</div>
-<p class="not-registered-yet">
-<span class="text-wrapper-6">Not registered yet?</span>
-<a href="/register.html">
-  <span class="text-wrapper-7"> Create an account</span>
-</a>
 
-</p>
+<form method="POST" action="proseslogin.php">
+  <div class="group">
+    <div class="frame">
+      <div class="frame-2">
+        <div class="text-wrapper-2">Login</div>
+        <div class="frame-3">
+          <div class="text-input">
+            <div class="text-wrapper-3">Email</div>
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group"><div ><input type="email" class="overlap-group" id="floatingInput" placeholder="Email" name="email" >
+            </div>
+          </div>
+          <div class="text-input">
+            <div class="text-wrapper-3">Password</div>
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group">
+                <div class="bagilink-id-username"></div><input type="password" class="overlap-group" id="floatingPassword" placeholder="Password" name="password">
+                <img class="ant-design-eye" src="images/ant-design-eye-outlined.svg"/>
+              </div>
+            </div>
+          </div>
+          <button class="button"><div class="btn btn-warning">Login</a></div></button>
+          <a href="/lupapassword.html">
+            <span class="text-wrapper-4">Forgot Password?</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="not-registered-yet">
+      <span class="text-wrapper-6">Not registered yet?</span>
+      <a href="register.php">
+        <span class="text-wrapper-7"> Create an account</span>
+      </a>
+    </p>
+  </form>
 </div>
 </div>
 </div>

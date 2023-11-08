@@ -19,11 +19,11 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
           <img src="images/logo/DriveEasy_putih.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Data Transaksi</div>
+        <div class="sidebar-brand-text mx-3">Drive Easy</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
@@ -33,33 +33,33 @@
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Features
+        Pendataan
       </div>
      
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
+          <span>Tabel</span>
         </a>
         <div id="collapseTable" class="collapse show" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item active" href="datapelanggan.html">Data Pelanggan</a>
-            <a class="collapse-item" href="datamobildantransaksi.html">Data Mobil & Transaksi</a>
+            
+            <a class="collapse-item active" href="datapelanggan.php">Data Pelanggan</a>
+            <a class="collapse-item" href="datamobildantransaksi.php">Data Mobil & Transaksi</a>
           </div>
         </div>
       </li>
      
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
+        Ulasan
       </div>
       
       <li class="nav-item">
-        <a class="nav-link" href="ulasanpelanggan.html">
+        <a class="nav-link" href="ulasanpelanggan.php">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Ulasan Pelanggan</span>
+          <span>Kritik & Saran</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -78,20 +78,12 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Andhung Gusti</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
@@ -107,13 +99,7 @@
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Data Mobil & Transaksi</h1>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Tables</li>
-              <li class="breadcrumb-item active" aria-current="page">Data Transaksi</li>
-            </ol>
           </div>
-
           <!-- Row -->
           <div class="row">
             <!-- Datatables -->
@@ -121,6 +107,7 @@
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Mobil</h6>
+                  <a href="tambahdatamobil.php" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush" id="dataTable">
@@ -132,7 +119,8 @@
                         <th>Tahun</th>
                         <th>Tempat Duduk</th>
                         <th>Harga Sewa</th>
-                      </tr>
+                        <th>Action</th>
+                      
                     </thead>
                     <tfoot>
                       <tr>
@@ -142,40 +130,45 @@
                         <th>Tahun</th>
                         <th>Tempat Duduk</th>
                         <th>Harga Sewa</th>
-                      </tr>
+                        <th>Action</th>
+                      
                     </tfoot>
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>Xenia</td>
+                        <td>Daihatsu</td>
+                        <td>Hitam</td>
+                        <td>2007</td>
+                        <td>6 tempat duduk</td>
+                        <td>300 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                       <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
+                        <td>Inova Reborn</td>
+                        <td>Toyota</td>
+                        <td>Biru</td>
+                        <td>2020</td>
+                        <td>6 tempat duduk</td>
+                        <td>350 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                       <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
+                        <td>Jazz</td>
+                        <td>Honda</td>
+                        <td>Merah</td>
+                        <td>2019</td>
+                        <td>4 tempat duduk</td>
+                        <td>250 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                       <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
+                        <td>Fuso</td>
+                        <td>Hino</td>
+                        <td>Hijau</td>
+                        <td>2007</td>
+                        <td>2 tempat duduk</td>
+                        <td>500 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -187,125 +180,62 @@
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
+                  <a href="tambahdatatransaksi.php" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     <thead class="thead-light">
                       <tr>
                         <th>Nama</th>
-                        <th>Pekerjaan</th>
-                        <th>Alamat</th>
-                        <th>Umur</th>
-                        <th>Tanggal Transaksi</th>
-                        <th>Jumlah Transaksi</th>
+                        <th>Jenis Mobil (Nopol)</th>
+                        <th>Lama Sewa</th>
+                        <th>Tanggal Sewa</th>
+                        <th>Jumlah Bayar</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
                         <th>Nama</th>
-                        <th>Pekerjaan</th>
-                        <th>Alamat</th>
-                        <th>Umur</th>
-                        <th>Tanggal Transaksi</th>
-                        <th>Jumlah Transaksi</th>
+                        <th>Jenis Mobil (Nopol)</th>
+                        <th>Lama Sewa</th>
+                        <th>Tanggal Sewa</th>
+                        <th>Jumlah Bayar</th>
+                        <th>Action</th>
                       </tr>
                     </tfoot>
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>Septian Yoga eruh</td>
+                        <td>Inova Reborn (AG 4356 WF)</td>
+                        <td>1 Hari</td>
+                        <td>21 Oktober-22 Oktober</td>
+                        <td>300 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                       <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
+                        <td>Andhung Peyot</td>
+                        <td>Jazz (AG 5567 XY)</td>
+                        <td>12 Jam</td>
+                        <td>21 Oktober-21 Oktober</td>
+                        <td>250 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                       <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
+                        <td>Ardhi Suseno</td>
+                        <td>Avanza (AG 5471 VY)</td>
+                        <td>1 Hari</td>
+                        <td>22 Oktober-23 Oktober</td>
+                        <td>200 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                       <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
-                      </tr>
-                      <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td>$162,700</td>
-                      </tr>
-                      <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td>$372,000</td>
-                      </tr>
-                      <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                        <td>2012/08/06</td>
-                        <td>$137,500</td>
-                      </tr>
-                      <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td>$327,900</td>
-                      </tr>
-                      <tr>
-                        <td>Colleen Hurst</td>
-                        <td>Javascript Developer</td>
-                        <td>San Francisco</td>
-                        <td>39</td>
-                        <td>2009/09/15</td>
-                        <td>$205,500</td>
-                      </tr>
-                      <tr>
-                        <td>Sonya Frost</td>
-                        <td>Software Engineer</td>
-                        <td>Edinburgh</td>
-                        <td>23</td>
-                        <td>2008/12/13</td>
-                        <td>$103,600</td>
-                      </tr>
-                      <tr>
-                        <td>Jena Gaines</td>
-                        <td>Office Manager</td>
-                        <td>London</td>
-                        <td>30</td>
-                        <td>2008/12/19</td>
-                        <td>$90,560</td>
-                      </tr>
-                      <tr>
-                        <td>Quinn Flynn</td>
-                        <td>Support Lead</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2013/03/03</td>
-                        <td>$342,000</td>
+                        <td>David MU</td>
+                        <td>Xenia (AG 1231 GH)</td>
+                        <td>1 Hari</td>
+                        <td>22 Oktober-23 Oktober</td>
+                        <td>200 Ribu</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -315,14 +245,7 @@
           </div>
           <!--Row-->
 
-          <!-- Documentation Link -->
-          <div class="row">
-            <div class="col-lg-12">
-              <p>DataTables is a third party plugin that is used to generate the demo table below. For more information
-                about DataTables, please visit the official <a href="https://datatables.net/" target="_blank">DataTables
-                  documentation.</a></p>
-            </div>
-          </div>
+          
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -340,7 +263,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.html" class="btn btn-primary">Logout</a>
+                  <a href="login.php" class="btn btn-primary">Logout</a>
                 </div>
               </div>
             </div>
@@ -355,7 +278,7 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+              <b><a target="_blank">Kelompok 4C</a></b>
             </span>
           </div>
         </div>

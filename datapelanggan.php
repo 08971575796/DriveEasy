@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="images/logo/DriveEasy_putih.png" rel="icon">
-  <title>Drive Easy - Charts</title>
+  <title>Drive Easy - Data Pelanggan</title>
   <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
           <img src="images/logo/DriveEasy_putih.png">
         </div>
@@ -26,39 +26,39 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="dashboardadmin.html">
+        <a class="nav-link" href="dashboardadmin.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Features
+        Pendataan
       </div>
-     
-      <li class="nav-item">
+      
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
+          <span>Tabel</span>
         </a>
-        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+        <div id="collapseTable" class="collapse show" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item active" href="datapelanggan.html">Data Pelanggan</a>
-            <a class="collapse-item" href="datamobildantransaksi.html">Data Mobil & Transaksi</a>
+          
+            <a class="collapse-item active" href="datapelanggan.php">Data Pelanggan</a>
+            <a class="collapse-item" href="datamobildantransaksi.php">Data Mobil & Transaksi</a>
           </div>
         </div>
       </li>
       
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
+        Ulasan
       </div>
      
-      <li class="nav-item active">
-        <a class="nav-link" href="ulasanpelanggan.html">
+      <li class="nav-item">
+        <a class="nav-link" href="ulasanpelanggan.php">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Ulasan Pelanggan</span>
+          <span>Kritik & Saran</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -73,7 +73,6 @@
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-          
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -85,7 +84,7 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
@@ -98,49 +97,73 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Ulasan Pelanggan</h1>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Ulasan Pelanggan</li>
-            </ol>
+            <h1 class="h3 mb-0 text-gray-800">Data Pelanggan</h1>
+           
           </div>
-            <div class="card">
-              <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-light">Kritik & Saran</h6>
+
+          <div class="row">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
+                  <a href="tambahdatapelanggan.php" class="btn btn-primary">Tambah Data</a>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Password</th>
+                        <th>Telepon</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>D001</td>
+                        <td>Andhung</td>
+                        <td>Bagor, Nganjuk</td>
+                        <td>Akusuma11</td>
+                        <td>081234567890</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>D002</td>
+                        <td>Iqbal</td>
+                        <td>Mangundikaran, Nganjuk</td>
+                        <td>iqbalf011</td>
+                        <td>081234567890</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>D003</td>
+                        <td>Yoga</td>
+                        <td>Jatikalen, Nganjuk</td>
+                        <td>sepyog123</td>
+                        <td>081234567890</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                      </tr>
+      
+                      <tr>
+                        <td>D004</td>
+                        <td>Ardi</td>
+                        <td>Loceret, Nganjuk</td>
+                        <td>ArdiY232</td>
+                        <td>081234567890</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
               </div>
-              <div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">Tarif termurah dibanding sewa mobil manapun, kondisi mobil yg selalu bersih,wangi,dan keluaran terbaru, serta pelayanan yg sangat ramah menjadikan Rizky Shafira selalu diminati.Benar2 sewa mobil terbaik di Nganjuk</div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Septia Andini · Sukomoro, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a href="#">
-                    <div class="text-truncate message-title">Harga TerMurah dibandingkan Sewa Mobil yang lain, pelayanan juga ramah,mobilnya bersih dan baru semua. Recommended buat kalian yang cari sewa mobil di area Nganjuk
-                    </div>
-                    <div class="small text-gray-500 message-time">Shafira Nasywa · Pace, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">Pengalaman sewa disini sangat memuaskan selalu melayani dengan ramah sesuai kebutuhan dan sudah di jelaskan secara rinci mengenai BBM maupun km. Mobil bersih unit terbaru manteppppppp
-                    </div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Ike Dyah A · Bagor, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">mantab jiwa
-                    </div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Septian Yoga · Kertosono, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="card-footer text-center">
-                  <a class="m-0 small text-primary card-link" href="#">View More <i
-                      class="fas fa-chevron-right"></i></a>
-                </div>
-              </div>
+            </div>
+          </div>
+          <!--Row-->
+
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
@@ -157,12 +180,11 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.html" class="btn btn-primary">Logout</a>
+                  <a href="login.php" class="btn btn-primary">Logout</a>
                 </div>
               </div>
             </div>
           </div>
-
 
         </div>
         <!---Container Fluid-->
@@ -172,7 +194,7 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+              <b><a target="_blank">Kelompok 4C</a></b>
             </span>
           </div>
         </div>
@@ -186,17 +208,10 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="scss/bootstrap/vendor/jquery/jquery.min.js"></script>
-  <script src="scss/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="scss/bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
-  <!-- Page level plugins -->
-  <script src="scss/bootstrap/vendor/chart.js/Chart.min.js"></script>
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/chart-bar-demo.js"></script>
-</body>
 
 </body>
 
