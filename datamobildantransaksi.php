@@ -27,7 +27,7 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="dashboardadmin.html">
+        <a class="nav-link" href="dashboardadmin.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -70,29 +70,6 @@
       <div id="content">
         <!-- TopBar -->
         <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Andhung Gusti</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-          </ul>
         </nav>
         <!-- Topbar -->
         <!-- Container Fluid-->
@@ -113,7 +90,8 @@
                   <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
                       <tr>
-                        <th>Nama</th>
+                        <th>id</th>
+                        <th>Nama Mobil</th>
                         <th>Merek</th>
                         <th>Warna</th>
                         <th>Tahun</th>
@@ -124,7 +102,8 @@
                     </thead>
                     <tfoot>
                       <tr>
-                        <th>Nama</th>
+                        <th>id</th>
+                        <th>Nama Mobil</th>
                         <th>Merek</th>
                         <th>Warna</th>
                         <th>Tahun</th>
@@ -135,40 +114,44 @@
                     </tfoot>
                     <tbody>
                       <tr>
+                        <td>01</td>
                         <td>Xenia</td>
                         <td>Daihatsu</td>
                         <td>Hitam</td>
                         <td>2007</td>
                         <td>6 tempat duduk</td>
                         <td>300 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
                       <tr>
+                        <td>02</td>
                         <td>Inova Reborn</td>
                         <td>Toyota</td>
                         <td>Biru</td>
                         <td>2020</td>
                         <td>6 tempat duduk</td>
                         <td>350 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
                       <tr>
+                        <td>03</td>
                         <td>Jazz</td>
                         <td>Honda</td>
                         <td>Merah</td>
                         <td>2019</td>
                         <td>4 tempat duduk</td>
                         <td>250 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
                       <tr>
+                        <td>04</td>
                         <td>Fuso</td>
                         <td>Hino</td>
                         <td>Hijau</td>
                         <td>2007</td>
                         <td>2 tempat duduk</td>
                         <td>500 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -180,7 +163,7 @@
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
-                  <a href="tambahdatatransaksi.php" class="btn btn-primary">Tambah Data</a>
+                  
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
@@ -191,7 +174,7 @@
                         <th>Lama Sewa</th>
                         <th>Tanggal Sewa</th>
                         <th>Jumlah Bayar</th>
-                        <th>Action</th>
+                      
                       </tr>
                     </thead>
                     <tfoot>
@@ -201,7 +184,7 @@
                         <th>Lama Sewa</th>
                         <th>Tanggal Sewa</th>
                         <th>Jumlah Bayar</th>
-                        <th>Action</th>
+                       
                       </tr>
                     </tfoot>
                     <tbody>
@@ -211,7 +194,7 @@
                         <td>1 Hari</td>
                         <td>21 Oktober-22 Oktober</td>
                         <td>300 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                       
                       </tr>
                       <tr>
                         <td>Andhung Peyot</td>
@@ -219,7 +202,7 @@
                         <td>12 Jam</td>
                         <td>21 Oktober-21 Oktober</td>
                         <td>250 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                       
                       </tr>
                       <tr>
                         <td>Ardhi Suseno</td>
@@ -227,7 +210,7 @@
                         <td>1 Hari</td>
                         <td>22 Oktober-23 Oktober</td>
                         <td>200 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                       
                       </tr>
                       <tr>
                         <td>David MU</td>
@@ -235,7 +218,7 @@
                         <td>1 Hari</td>
                         <td>22 Oktober-23 Oktober</td>
                         <td>200 Ribu</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                       
                       </tr>
                     </tbody>
                   </table>

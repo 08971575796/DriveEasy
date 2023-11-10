@@ -39,7 +39,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Batal</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Batal</a></li>
 	      </div>
 	    </div>
 	  </nav>
@@ -76,7 +76,7 @@
             </div>
           </div>
           <button class="button"><div class="btn btn-warning">Login</a></div></button>
-          <a href="/lupapassword.html">
+          <a href="lupapassword.php">
             <span class="text-wrapper-4">Forgot Password?</span>
           </a>
         </div>

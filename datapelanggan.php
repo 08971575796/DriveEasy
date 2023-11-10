@@ -69,29 +69,6 @@
       <div id="content">
         <!-- TopBar -->
         <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Andhung Gusti</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-          </ul>
         </nav>
         <!-- Topbar -->
         <!-- Container Fluid-->
@@ -108,6 +85,7 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
                   <a href="tambahdatapelanggan.php" class="btn btn-primary">Tambah Data</a>
+                
                 </div>
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
@@ -116,8 +94,8 @@
                         <th>ID</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-                        <th>Password</th>
                         <th>Telepon</th>
+                        <th>Password</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -126,34 +104,34 @@
                         <td>D001</td>
                         <td>Andhung</td>
                         <td>Bagor, Nganjuk</td>
-                        <td>Akusuma11</td>
                         <td>081234567890</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td>Akusuma123</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger" name="hapus_datapelanggan.php" >Hapus</a></td>
                       </tr>
                       <tr>
                         <td>D002</td>
                         <td>Iqbal</td>
                         <td>Mangundikaran, Nganjuk</td>
-                        <td>iqbalf011</td>
                         <td>081234567890</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td>iqbal123</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
                       <tr>
                         <td>D003</td>
                         <td>Yoga</td>
                         <td>Jatikalen, Nganjuk</td>
-                        <td>sepyog123</td>
                         <td>081234567890</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td>yoga123</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
       
                       <tr>
                         <td>D004</td>
                         <td>Ardi</td>
                         <td>Loceret, Nganjuk</td>
-                        <td>ArdiY232</td>
                         <td>081234567890</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                        <td>ardi123</td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                       </tr>
                     </tbody>
                   </table>

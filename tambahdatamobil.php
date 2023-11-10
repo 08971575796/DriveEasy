@@ -106,50 +106,58 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
+                 
                 </div>
                 <div class="input-group mb-3">
                   <form>
-                    <form>
+                  <form method="POST" action="prosestambahmobil.php">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Nama</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <label for="exampleInputNamaMobil1" class="form-label">Nama Mobil</label>
+                      <input type="text" class="form-control" id="exampleInputNamaMobil1" name="nama_mobil" >
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputMerek1" class="form-label">Merek</label>
-                        <input type="text" class="form-control" id="exampleInputMerek1">
+                        <label for="exampleInputMerek1" class="form-label">Merk</label>
+                        <input type="text" class="form-control" name="merk" id="exampleInputMerek1">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputAlamat1" class="form-label">Warna</label>
-                      <input type="nama" class="form-control" id="exampleInputAlamat1">
+                      <input type="nama" class="form-control" id="exampleInputAlamat1" name="warna">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputTelepon1" class="form-label">Tahun</label>
-                      <input type="nama" class="form-control" id="exampleInputTelepon1">
+                      <input type="nama" class="form-control" id="exampleInputTelepon1" name="tahun">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputTempatduduk1" class="form-label">Cc</label>
+                      <input type="text" class="form-control" id="exampleInputTempatduduk1" name="cc" >
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputTelepon1" class="form-label">Bahan Bakar</label>
+                      <input type="nama" class="form-control" id="exampleInputTelepon1" name="bahan_bakar" >
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputTempatduduk1" class="form-label">Tempat duduk</label>
-                      <input type="text" class="form-control" id="exampleInputTempatduduk1">
+                      <input type="text" class="form-control" id="exampleInputTempatduduk1" name="tempat_duduk" >
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputhargasewa1" class="form-label">Harga Sewa</label>
-                      <input type="text" class="form-control" id="exampleInputhargasewa1">
+                      <input type="text" class="form-control" id="exampleInputhargasewa1" name="harga_sewa" >
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                    <button type="submit" value="Tambah Mobil" class="btn btn-primary">Submit
+                    </button>
                     <a href="datamobildantransaksi.php" class="btn btn-primary">Batal</a>
                   </form>
                   </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                    </tbody>
-                  </table>
+                     <div class="table-responsive">
+                     <table class="table align-items-center table-flush">
+                      <thead class="thead-light">
+                      </tbody>
+                      </table>
+                  <form>
                 </div>
                 <div class="card-footer"></div>
+                
               </div>
             </div>
           </div>

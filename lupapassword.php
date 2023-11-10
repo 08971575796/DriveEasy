@@ -37,6 +37,8 @@
                     <span class="text-wrapper">Welcome to <br /></span> <span class="span">DriveEasy</span>
                 </p>
             </div>
+
+            <form method="POST" action="resetpassword.php">
             <div class="frame">
                 <div class="frame-2">
                     <div class="text-wrapper-2">Forgot Password</div>
@@ -44,13 +46,13 @@
                         <div class="text-input">
                             <div class="username">Email</div>
                             <div class="group">
-                                <div class="overlap-group"><div ><input type="email" class="overlap-group" id="floatingInput" placeholder="Username" ></div></div>
+                                <div class="overlap-group"><div ><input type="email" class="overlap-group" id="floatingInput" placeholder="Username" name="email" ></div></div>
                             </div>
                         </div>
                     </div>
                     <button class="button"><div class="btn btn-warning">Reset Password</div></button>
                 </div>
-                <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="/login.html">Back to Sign In</p></a>
+                <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="login.php">Back to Sign In</p></a>
             </div>
         </div>
     </div>

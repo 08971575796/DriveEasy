@@ -12,6 +12,9 @@
   <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Pelanggan</title>
 </head>
 
 <body id="page-top">
@@ -108,36 +111,32 @@
                   <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
                 </div>
                 <div class="input-group mb-3">
-                  <form>
-                    <form>
+    
+                    <form method="POST" action="prosestambahdatapelanggan.php" autocomplete="off" name="tambahdatapelanggan">
                       <fieldset disabled>
                         <legend>Isi data pelanggan</legend>
                         <div class="mb-3">
                           <label for="disabledTextInput" class="form-label">Id</label>
-                          <input type="text" id="disabledTextInput" class="form-control" placeholder="Id">
+                          <input type="text" id="disabledTextInput" class="form-control" placeholder="Id" name="id_pelanggan">
                         </div>
                       </fieldset>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Nama</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <label for="exampleInputNama1" class="form-label">Nama</label>
+                      <input type="nama" class="form-control" id="exampleInputNama1" aria-describedby="emailHelp" name="nama">
                     </div>
-                    <div class="mb-3">
-                    <label for="inputPassword5" class="form-label">Password</label>
-                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-                    <div id="passwordHelpBlock" class="form-text">
-                    </div>
-                  </div>
+                    
                     <div class="mb-3">
                       <label for="exampleInputAlamat1" class="form-label">Alamat</label>
-                      <input type="nama" class="form-control" id="exampleInputAlamat1">
+                      <input type="nama" class="form-control" id="exampleInputAlamat1" name="alamat" >
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputTelepon1" class="form-label">Telepon</label>
-                      <input type="nama" class="form-control" id="exampleInputTelepon1">
+                      <input type="nama" class="form-control" id="exampleInputTelepon1" name="telepon" >
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="mb-3">
+                    <label for="inputPassword5" class="form-label">Password</label>
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="password" >
+                    <div id="passwordHelpBlock" class="form-text">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <a href="datapelanggan.php" class="btn btn-primary">Batal</a>
@@ -147,6 +146,13 @@
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                     </tbody>
+                    <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Alamat</th>  
+            <th>Telepon</th>
+            <th>Password</th>
+        </tr>
                   </table>
                 </div>
                 <div class="card-footer"></div>

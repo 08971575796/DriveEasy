@@ -95,7 +95,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Andhung Gusti</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Admin</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -202,13 +202,13 @@
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
-                      <tr>
+                    <tr>
                         <th>ID</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-              
                         <th>Telepon</th>
-                        
+                        <th>Password</th>
+                      
                       </tr>
                     </thead>
                     <tbody>
@@ -216,33 +216,33 @@
                         <td>D001</td>
                         <td>Andhung</td>
                         <td>Bagor, Nganjuk</td>
-                       
                         <td>081234567890</td>
-                       
+                        <td>Akusuma123</td>
+                      
                       </tr>
                       <tr>
                         <td>D002</td>
                         <td>Iqbal</td>
                         <td>Mangundikaran, Nganjuk</td>
-                        
                         <td>081234567890</td>
-                        
+                        <td>iqbal123</td>
+                       
                       </tr>
                       <tr>
                         <td>D003</td>
                         <td>Yoga</td>
                         <td>Jatikalen, Nganjuk</td>
-                        
                         <td>081234567890</td>
-                        
+                        <td>yoga123</td>
+                       
                       </tr>
       
                       <tr>
                         <td>D004</td>
                         <td>Ardi</td>
                         <td>Loceret, Nganjuk</td>
-                      
                         <td>081234567890</td>
+                        <td>ardi123</td>
                        
                       </tr>
                     </tbody>
