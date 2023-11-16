@@ -13,6 +13,21 @@
   <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <style>
+    #carForm input {
+        width: 200px; /* Set lebar input menjadi 100% dari lebar parent */
+        padding: 8px; /* Tambahkan padding agar input terlihat lebih baik */
+        box-sizing: border-box; /* Sertakan padding dalam perhitungan lebar total */
+        margin-bottom: 10px; /* Tambahkan margin bawah untuk memberikan ruang antar input */
+    }
+
+    #carForm button {
+        width: 100%; /* Set lebar tombol menjadi 100% dari lebar parent */
+        padding: 8px;
+        box-sizing: border-box;
+    }
+</style>
+
 </head>
 
 <body id="page-top">
@@ -109,9 +124,9 @@
                  
                 </div>
                 <div class="input-group mb-3">
-                  <form>
+                 
                   <form method="POST" action="prosestambahmobil.php">
-                    <div class="mb-3">
+                    <div class="mb-3" id="carForm">
                       <label for="exampleInputNamaMobil1" class="form-label">Nama Mobil</label>
                       <input type="text" class="form-control" id="exampleInputNamaMobil1" name="nama_mobil" >
                     </div>
@@ -136,25 +151,19 @@
                       <input type="nama" class="form-control" id="exampleInputTelepon1" name="bahan_bakar" >
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputTempatduduk1" class="form-label">Tempat duduk</label>
-                      <input type="text" class="form-control" id="exampleInputTempatduduk1" name="tempat_duduk" >
-                    </div>
-                    <div class="mb-3">
                       <label for="exampleInputhargasewa1" class="form-label">Harga Sewa</label>
                       <input type="text" class="form-control" id="exampleInputhargasewa1" name="harga_sewa" >
                     </div>
-                    
-                    <button type="submit" value="Tambah Mobil" class="btn btn-primary">Submit
-                    </button>
+                    <input type="submit" value="Tambah Mobil" class="btn btn-primary">
                     <a href="datamobildantransaksi.php" class="btn btn-primary">Batal</a>
                   </form>
                   </div>
                      <div class="table-responsive">
                      <table class="table align-items-center table-flush">
                       <thead class="thead-light">
-                      </tbody>
+                      </body>
                       </table>
-                  <form>
+              
                 </div>
                 <div class="card-footer"></div>
                 

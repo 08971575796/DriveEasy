@@ -98,7 +98,7 @@
                 <span class="ml-2 d-none d-lg-inline text-white small">Admin</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="profil.php">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -122,14 +122,41 @@
           </div>
 
           <div class="row mb-3">
-            <!-- Earnings (Monthly) Card Example -->
+          <?php
+              // Koneksi ke database
+              $servername = "localhost";
+              $username = "root"; // Ganti dengan username MySQL Anda
+              $password = ""; // Ganti dengan password MySQL Anda
+              $dbname = "driveeasy2"; // Ganti dengan nama database Anda
+
+              $conn = new mysqli($servername, $username, $password, $dbname);
+
+              // Cek koneksi
+              if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+              }
+
+              // Query untuk mengambil nilai "Data mobil" dari database
+              $sql = "SELECT COUNT(*) as total_data FROM mobil";
+              $result = $conn->query($sql);
+
+              if ($result->num_rows > 0) {
+                  $row = $result->fetch_assoc();
+                  $totalDataMobil = $row['total_data'];
+              } else {
+                  $totalDataMobil = 0;
+              }
+
+              // Tutup koneksi
+              $conn->close();
+              ?>
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Data mobil</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">20 </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalDataMobil; ?></div>
                       
                     </div>
                     <div class="col-auto">

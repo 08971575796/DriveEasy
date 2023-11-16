@@ -1,9 +1,6 @@
 <?php
 $koneksi = new mysqli ("localhost", "root", "", "driveeasy2");
-if ($koneksi->connect_error) {
-    die("Koneksi database gagal: " . $koneksi->connect_error);
-}
-    $id_mobil = $_POST["id_mobil"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama_mobil = $_POST["nama_mobil"];
     $merk = $_POST["merk"];
     $warna = $_POST["warna"];
@@ -12,20 +9,24 @@ if ($koneksi->connect_error) {
     $bahan_bakar = $_POST["bahan_bakar"];
     $harga_sewa = $_POST["harga_sewa"];
 
-    $cek_query = "SELECT * FROM mobil WHERE id_mobil='$id_mobil' OR nama_mobil='$nama_mobil'";
-    $cek_result = $koneksi->query($cek_query);
-    // Query untuk menambahkan data ke dalam tabel
-    $insert_query = "INSERT INTO mobil (nama_mobil, merk, warna, tahun, cc, bahan_bakar, harga_sewa) VALUES ('$nama_mobil', '$merk', '$warna', '$tahun', '$cc', '$bahan_bakar', '$harga_sewa')";
-    if ($koneksi->query($query) === TRUE) {
+    // Periksa koneksi
+    if ($koneksi->connect_error) {
+        die("Koneksi gagal: " . $koneksi->connect_error);
+    }
+    // Siapkan query SQL untuk memasukkan data
+    $sql = "INSERT INTO mobil (nama_mobil, merk, warna, tahun, cc, bahan_bakar, harga_sewa) VALUES ('$nama_mobil', '$merk', '$warna', '$tahun', '$cc', '$bahan_bakar', '$harga_sewa')";
+
+    if ($koneksi->query($sql) === TRUE) {
         ?>
         <script>
-          alert("<?php echo "Data berhasil di masukkan"?>");
-          window.location.replace('tambahdatamobil.php');
-        </script>
-        <?php
+        alert("<?php echo "Data berhasil di tambahkan"?>");
+        window.location.replace('tambahdatamobil.php');
+      </script>
+      <?php
     } else {
-        echo "Error: " . $query . "<br>" . $koneksi->error;
+        echo "Error: " . $sql . "<br>" . $koneksi->error;
     }
-
+    // Tutup koneksi
     $koneksi->close();
+}
 ?>

@@ -1,25 +1,33 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "driveeasy2";
-
+$koneksi = new mysqli ("localhost", "root", "", "driveeasy2");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id_pelanggan = $_POST["id_pelanggan"];
-    $nama = $_POST["nama"];
-    $alamat = $_POST["alamat"];
-    $telepon = $_POST["telepon"];
-    $password = $_POST["password"];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $telepon = $_POST['telepon'];
+    $password = $_POST['password'];
 
-    // Query untuk menambahkan data ke dalam tabel
-    $query = "INSERT INTO data_pelanggan (id_pelanggan, nama, alamat, telepon, password) VALUES ('$id_pelanggan', '$nama', '$alamat, '$telepon', '$password')";
+    // Lakukan validasi data jika diperlukan
 
-    if($koneksi->query($query) === TRUE) {
-        echo "Data berhasil ditambahkan";
-    } else {
-        echo "Error: " . $query . "<br>" . $koneksi->error;
+    // Periksa koneksi
+    if ($koneksi->connect_error) {
+        die("Koneksi gagal: " . $koneksi->connect_error);
     }
 
+    // Siapkan query SQL untuk memasukkan data
+    $sql = "INSERT INTO data_pelanggan (nama, alamat, telepon, password) VALUES ('$nama', '$alamat', '$telepon', '$password')";
+
+    if ($koneksi->query($sql) === TRUE) {
+        ?>
+        <script>
+        alert("<?php echo "Data berhasil di tambahkan"?>");
+        window.location.replace('tambahdatapelanggan.php');
+      </script>
+      <?php
+    } else {
+        echo "Error: " . $sql . "<br>" . $koneksi->error;
+    }
+
+    // Tutup koneksi
     $koneksi->close();
 }
 ?>

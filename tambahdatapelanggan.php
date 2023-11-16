@@ -111,36 +111,22 @@
                   <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
                 </div>
                 <div class="input-group mb-3">
-    
-                    <form method="POST" action="prosestambahdatapelanggan.php" autocomplete="off" name="tambahdatapelanggan">
-                      <fieldset disabled>
-                        <legend>Isi data pelanggan</legend>
-                        <div class="mb-3">
-                          <label for="disabledTextInput" class="form-label">Id</label>
-                          <input type="text" id="disabledTextInput" class="form-control" placeholder="Id" name="id_pelanggan">
-                        </div>
-                      </fieldset>
-                    <div class="mb-3">
-                      <label for="exampleInputNama1" class="form-label">Nama</label>
-                      <input type="nama" class="form-control" id="exampleInputNama1" aria-describedby="emailHelp" name="nama">
-                    </div>
-                    
-                    <div class="mb-3">
-                      <label for="exampleInputAlamat1" class="form-label">Alamat</label>
-                      <input type="nama" class="form-control" id="exampleInputAlamat1" name="alamat" >
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputTelepon1" class="form-label">Telepon</label>
-                      <input type="nama" class="form-control" id="exampleInputTelepon1" name="telepon" >
-                    </div>
-                    <div class="mb-3">
-                    <label for="inputPassword5" class="form-label">Password</label>
-                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="password" >
-                    <div id="passwordHelpBlock" class="form-text">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="datapelanggan.php" class="btn btn-primary">Batal</a>
-                  </form>
+                <h2>Form Tambah Pelanggan</h2>
+                    <form action="prosestambahdatapelanggan.php" method="POST">
+                        <label for="nama">Nama:</label>
+                        <input type="text" id="nama" name="nama" required><br>
+
+                        <label for="alamat">Alamat:</label>
+                        <textarea id="alamat" name="alamat" required></textarea><br>
+
+                        <label for="telepon">Telepon:</label>
+                        <input type="text" id="telepon" name="telepon" required><br>
+
+                        <label for="password">password:</label>
+                        <input type="text" id="password" name="password" required><br>
+
+                        <input type="submit" value="Tambah Pelanggan" class="btn btn-primary">
+                    </form>
                   </div>
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
