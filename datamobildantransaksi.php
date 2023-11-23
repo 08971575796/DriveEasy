@@ -221,62 +221,6 @@
                     .then(message => {
                         alert(message);
                         displayCarData();
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
-        }
-
-        function editData(idMobil) {
-            // Fetch car data based on ID
-            fetch(`get_car_by_id.php?id=${idMobil}`)
-                .then(response => response.json())
-                .then(car => {
-                    // Populate the edit form with the retrieved data
-                    document.getElementById('editId').value = car.id_mobil;
-                    document.getElementById('editNamaMobil').value = car.nama_mobil;
-                    document.getElementById('editMerk').value = car.merk;
-                    document.getElementById('editWarna').value = car.warna;
-                    document.getElementById('editTahun').value = car.tahun;
-                    document.getElementById('editCc').value = car.cc;
-                    document.getElementById('editBahanBakar').value = car.bahan_bakar;
-                    document.getElementById('editHargaSewa').value = car.harga_sewa;
-                    // Populate other form fields as needed
-
-                    // Show the edit form
-                    document.getElementById('editForm').style.display = 'block';
-                })
-                .catch(error => console.error('Error:', error));
-        }
-        
-        function cancelEdit() {
-            // Hide the edit form
-            document.getElementById('editForm').style.display = 'none';
-        }
-         // Event listener for the edit form submission
-         document.getElementById('carForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            // Get form data
-            const formData = new FormData(event.target);
-
-            // Send the updated data to the server for processing
-            fetch('update_car_data.php', {
-                method: 'POST',
-                body: formData,
-            })
-                .then(response => response.text())
-                .then(message => {
-                    alert(message);
-                    // Reload the table after updating data
-                    displayCarData();
-                    // Hide the edit form
-                    document.getElementById('editForm').style.display = 'none';
-                })
-                .catch(error => console.error('Error:', error));
-                
-        });
-
-        window.onload = displayCarData;
     </script>
 
             <div class="col-lg-12">
