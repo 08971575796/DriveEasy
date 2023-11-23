@@ -20,7 +20,12 @@ if (isset($_GET['id'])) {
     $sql = "DELETE FROM loginuser WHERE id_user = $id";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Data pelanggan berhasil dihapus";
+        ?>
+        <script>
+        alert("<?php echo "Data berhasil di hapus"?>");
+        window.location.replace('datapelanggan.php');
+      </script>
+      <?php
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
