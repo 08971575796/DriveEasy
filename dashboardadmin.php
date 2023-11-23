@@ -13,6 +13,9 @@
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
+
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -127,7 +130,7 @@
               $servername = "localhost";
               $username = "root"; // Ganti dengan username MySQL Anda
               $password = ""; // Ganti dengan password MySQL Anda
-              $dbname = "driveeasy2"; // Ganti dengan nama database Anda
+              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
 
               $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -137,7 +140,7 @@
               }
 
               // Query untuk mengambil nilai "Data mobil" dari database
-              $sql = "SELECT COUNT(*) as total_data FROM mobil";
+              $sql = "SELECT COUNT(*) as total_data FROM stock_mobil";
               $result = $conn->query($sql);
 
               if ($result->num_rows > 0) {
@@ -166,14 +169,41 @@
                 </div>
               </div>
             </div>
-            <!-- Earnings (Annual) Card Example -->
+            <?php
+          // Koneksi ke database
+              $servername = "localhost";
+              $username = "root"; // Ganti dengan username MySQL Anda
+              $password = ""; // Ganti dengan password MySQL Anda
+              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
+
+              $conn = new mysqli($servername, $username, $password, $dbname);
+
+              // Cek koneksi
+              if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+              }
+
+              // Query untuk mengambil nilai "Data mobil" dari database
+              $sql = "SELECT COUNT(*) as total_data_transaksi FROM booking";
+              $result = $conn->query($sql);
+
+              if ($result->num_rows > 0) {
+                  $row = $result->fetch_assoc();
+                  $totalDataTransaksi = $row['total_data_transaksi'];
+              } else {
+                  $totalDataTransaksi = 0;
+              }
+
+              // Tutup koneksi
+              $conn->close();
+              ?>
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Data Transaksi</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalDataTransaksi; ?></div>
                       
                     </div>
                     <div class="col-auto">
@@ -183,14 +213,41 @@
                 </div>
               </div>
             </div>
-            <!-- New User Card Example -->
+            <?php
+              // Koneksi ke database
+              $servername = "localhost";
+              $username = "root"; // Ganti dengan username MySQL Anda
+              $password = ""; // Ganti dengan password MySQL Anda
+              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
+
+              $conn = new mysqli($servername, $username, $password, $dbname);
+
+              // Cek koneksi
+              if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+              }
+
+              // Query untuk mengambil nilai "Data mobil" dari database
+              $sql = "SELECT COUNT(*) as total_data_pelanggan FROM loginuser";
+              $result = $conn->query($sql);
+
+              if ($result->num_rows > 0) {
+                  $row = $result->fetch_assoc();
+                  $totalDataPelanggan = $row['total_data_pelanggan'];
+              } else {
+                  $totalDataPelanggan = 0;
+              }
+
+              // Tutup koneksi
+              $conn->close();
+              ?>
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Data Pelanggan</div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">20</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalDataPelanggan; ?></div>
                       
                     </div>
                     <div class="col-auto">
@@ -201,13 +258,41 @@
               </div>
             </div>
             <!-- Pending Requests Card Example -->
+            <?php
+              // Koneksi ke database
+              $servername = "localhost";
+              $username = "root"; // Ganti dengan username MySQL Anda
+              $password = ""; // Ganti dengan password MySQL Anda
+              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
+
+              $conn = new mysqli($servername, $username, $password, $dbname);
+
+              // Cek koneksi
+              if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+              }
+
+              // Query untuk mengambil nilai "Data mobil" dari database
+              $sql = "SELECT COUNT(*) as total_data_ulasan FROM ulasan";
+              $result = $conn->query($sql);
+
+              if ($result->num_rows > 0) {
+                  $row = $result->fetch_assoc();
+                  $totalDataUlasan = $row['total_data_ulasan'];
+              } else {
+                  $totalDataUlasan = 0;
+              }
+
+              // Tutup koneksi
+              $conn->close();
+                ?>
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Data Ulasan</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalDataUlasan; ?></div>
                       
                     </div>
                     <div class="col-auto">
@@ -223,7 +308,7 @@
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
-                  <a class="m-0 float-right btn btn-danger btn-sm" href="datapelanggan.php">View More <i
+                  <a class="m-0 float-right btn btn-danger btn-sm" href="datapelanggan.php">Lihat Selengkapnya <i
                       class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="table-responsive">
@@ -233,45 +318,47 @@
                         <th>ID</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-                        <th>Telepon</th>
-                        <th>Password</th>
+                        <th>Email</th>
                       
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>D001</td>
-                        <td>Andhung</td>
-                        <td>Bagor, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>Akusuma123</td>
-                      
-                      </tr>
-                      <tr>
-                        <td>D002</td>
-                        <td>Iqbal</td>
-                        <td>Mangundikaran, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>iqbal123</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>D003</td>
-                        <td>Yoga</td>
-                        <td>Jatikalen, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>yoga123</td>
-                       
-                      </tr>
-      
-                      <tr>
-                        <td>D004</td>
-                        <td>Ardi</td>
-                        <td>Loceret, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>ardi123</td>
-                       
-                      </tr>
+                    <?php
+                      // Koneksi ke database 
+                      $servername = "localhost";
+                      $username = "root";
+                      $password = "";
+                      $dbname = "driveeasy6";
+
+                      $conn = new mysqli($servername, $username, $password, $dbname);
+
+                      // Periksa koneksi
+                      if ($conn->connect_error) {
+                          die("Koneksi gagal: " . $conn->connect_error);
+                      }
+
+                      // Ambil data pelanggan dari database
+                      $sql = "SELECT * FROM loginuser";
+                      $result = $conn->query($sql);
+
+                      // Tutup koneksi database
+                      $conn->close();
+                      ?>
+                    <?php
+                    // Tampilkan data pelanggan dalam tabel
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_user"] . "</td>";
+                            echo "<td>" . $row["username"] . "</td>";
+                            echo "<td>" . $row["alamat"] . "</td>";
+                            echo "<td>" . $row["email"] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>Tidak ada data pelanggan</td></tr>";
+                    }
+                    ?>
                     </tbody>
                   </table>
                 </div>
@@ -286,34 +373,58 @@
                 </div>
                 <div>
                 <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">Tarif termurah dibanding sewa mobil manapun, kondisi mobil yg selalu bersih,wangi,dan keluaran terbaru, serta pelayanan yg sangat ramah menjadikan Rizky Shafira selalu diminati.Benar2 sewa mobil terbaik di Nganjuk</div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Septia Andini · Sukomoro, Nganjuk</div>
+                  
+                  <?php
+                      // Koneksi ke database 
+                      $servername = "localhost";
+                      $username = "root";
+                      $password = "";
+                      $dbname = "driveeasy6";
+
+                      $conn = new mysqli($servername, $username, $password, $dbname);
+
+                      // Periksa koneksi
+                      if ($conn->connect_error) {
+                          die("Koneksi gagal: " . $conn->connect_error);
+                      }
+
+                      // Ambil data pelanggan dari database
+                      $sql = "SELECT * FROM ulasan";
+                      $result = $conn->query($sql);
+
+                      // Tutup koneksi database
+                      $conn->close();
+                      ?>
+                  
+<?php
+if ($result->num_rows > 0) {
+    echo '<div class="table-responsive">';
+    echo '<table class="table table-bordered table-striped">';
+    echo '<thead class="thead-light">';
+    echo '<tr>';
+    echo '<th>Text Ulasan</th>';
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td class="small">' . $row["text_ulasan"] . '</td>';        echo '</tr>';
+    }
+
+    echo '</tbody>';
+    echo '</table>';
+    echo '</div>';
+} else {
+    echo '<div class="alert alert-info" role="alert">Tidak ada ulasan pelanggan.</div>';
+}
+?>
+
+                  
                   </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a href="#">
-                    <div class="text-truncate message-title">Harga TerMurah dibandingkan Sewa Mobil yang lain, pelayanan juga ramah,mobilnya bersih dan baru semua. Recommended buat kalian yang cari sewa mobil di area Nganjuk
-                    </div>
-                    <div class="small text-gray-500 message-time">Shafira Nasywa · Pace, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">Pengalaman sewa disini sangat memuaskan selalu melayani dengan ramah sesuai kebutuhan dan sudah di jelaskan secara rinci mengenai BBM maupun km. Mobil bersih unit terbaru manteppppppp
-                    </div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Ike Dyah A · Bagor, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">mantab jiwa
-                    </div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Septian Yoga · Kertosono, Nganjuk</div>
-                  </a>
-                </div>
+                
                 <div class="card-footer text-center">
-                  <a class="m-0 small text-primary card-link" href="ulasanpelanggan.php">View More <i
+                  <a class="m-0 small text-primary card-link" href="ulasanpelanggan.php">Lihat Selengkapnya <i
                       class="fas fa-chevron-right"></i></a>
                 </div>
               </div>
@@ -328,16 +439,16 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">PERINGATAN !</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Apakah anda akan logout?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Batal</button>
                   <a href="login.php" class="btn btn-primary">Logout</a>
                 </div>
               </div>

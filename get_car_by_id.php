@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "driveeasy2";
+$dbname = "driveeasy6";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 $idMobil = $_GET['id'];
 
 // Fetch car data based on ID
-$sql = "SELECT * FROM mobil WHERE id_mobil = $idMobil";
+$sql = "SELECT * FROM stock_mobil WHERE id_mobil = $idMobil";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

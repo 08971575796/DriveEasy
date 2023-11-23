@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "driveeasy2";
+    $dbname = "driveeasy6";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve other form fields as needed
 
     // Update car data in the database
-    $sql = "UPDATE mobil SET nama_mobil = '$namaMobil', merk = '$editMerk', warna = '$editWarna', tahun = '$editTahun', cc = '$editCc', bahan_bakar = '$editBahanBakar', harga_sewa = '$editHargaSewa' WHERE id_mobil = $idMobil";
+    $sql = "UPDATE stock_mobil SET nama_mobil = '$namaMobil', merk = '$editMerk', warna = '$editWarna', tahun = '$editTahun', cc = '$editCc', bahan_bakar = '$editBahanBakar', harga_sewa = '$editHargaSewa' WHERE id_mobil = $idMobil";
 
     if ($conn->query($sql) === TRUE) {
         echo "data mobil berhasil di update";

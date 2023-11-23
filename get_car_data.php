@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "driveeasy2";
+$dbname = "driveeasy6";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch car data from the database
-$sql = "SELECT * FROM mobil";
+$sql = "SELECT * FROM stock_mobil";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

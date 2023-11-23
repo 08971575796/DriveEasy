@@ -75,42 +75,135 @@
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Ulasan Pelanggan</h1>
-          
           </div>
-            <div class="card">
-              <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-light">Kritik & Saran</h6>
-              </div>
-              <div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">Tarif termurah dibanding sewa mobil manapun, kondisi mobil yg selalu bersih,wangi,dan keluaran terbaru, serta pelayanan yg sangat ramah menjadikan Rizky Shafira selalu diminati.Benar2 sewa mobil terbaik di Nganjuk</div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Septia Andini · Sukomoro, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a href="#">
-                    <div class="text-truncate message-title">Harga TerMurah dibandingkan Sewa Mobil yang lain, pelayanan juga ramah,mobilnya bersih dan baru semua. Recommended buat kalian yang cari sewa mobil di area Nganjuk
-                    </div>
-                    <div class="small text-gray-500 message-time">Shafira Nasywa · Pace, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">Pengalaman sewa disini sangat memuaskan selalu melayani dengan ramah sesuai kebutuhan dan sudah di jelaskan secara rinci mengenai BBM maupun km. Mobil bersih unit terbaru manteppppppp
-                    </div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Ike Dyah A · Bagor, Nganjuk</div>
-                  </a>
-                </div>
-                <div class="customer-message align-items-center">
-                  <a class="font-weight-bold" href="#">
-                    <div class="text-truncate message-title">mantab jiwa
-                    </div>
-                    <div class="small text-gray-500 message-time font-weight-bold">Septian Yoga · Kertosono, Nganjuk</div>
-                  </a>
-                </div>
-                
-              </div>
+          <div class="card">
+  <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
+    <h6 class="m-0 font-weight-bold text-light">Kritik & Saran</h6>
+    <!-- Kolom Pencarian -->
+    <div class="search-container">
+      <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+  </div>
+  <div>
+    <?php
+    // Koneksi ke database (gantilah dengan informasi koneksi Anda)
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "driveeasy6";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Periksa koneksi
+    if ($conn->connect_error) {
+        die("Koneksi gagal: " . $conn->connect_error);
+    }
+
+    // Ambil data ulasan dari database
+    $sql = "SELECT * FROM ulasan";
+    $result = $conn->query($sql);
+
+    // Tutup koneksi database
+    $conn->close();
+    ?>
+
+    <!-- Tampilkan data ulasan dalam HTML -->
+    <?php
+    if ($result->num_rows > 0) {
+        echo '<table class="table">';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th>ID Ulasan</th>';
+        echo '<th>ID User</th>';
+        echo '<th>Ulasan</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
+
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td>' . $row["id_ulasan"] . '</td>';
+            echo '<td>' . $row["id_user"] . '</td>';
+            echo '<td>' . $row["text_ulasan"] . '</td>';
+            echo '</tr>';
+        }
+
+        echo '</tbody>';
+        echo '</table>';
+    } else {
+        echo '<p>Tidak ada ulasan.</p>';
+    }
+    ?>
+  </div>
+</div>
+<style>
+  /* Gaya untuk kolom pencarian */
+  .search-container {
+    position: relative;
+    width: 200px; /* Sesuaikan lebar sesuai kebutuhan */
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  // Fungsi untuk melakukan pencarian dan filter tabel
+  function searchTable() {
+    // Mendapatkan nilai input pencarian
+    var input = document.getElementById('searchInput').value.toUpperCase();
+
+    // Mendapatkan baris-baris data pada tabel
+    var table = document.querySelector('.card table');
+    var rows = table.getElementsByTagName('tr');
+
+    // Iterasi melalui setiap baris tabel
+    for (var i = 1; i < rows.length; i++) { // Dimulai dari 1 untuk menghindari baris header
+      var rowData = rows[i].getElementsByTagName('td');
+      var found = false;
+
+      // Iterasi melalui setiap kolom data pada baris
+      for (var j = 0; j < rowData.length; j++) {
+        // Cek apakah nilai dalam kolom mengandung input pencarian
+        if (rowData[j]) {
+          var cellValue = rowData[j].textContent || rowData[j].innerText;
+          if (cellValue.toUpperCase().indexOf(input) > -1) {
+            found = true;
+            break;
+          }
+        }
+      }
+
+      // Menyembunyikan atau menampilkan baris berdasarkan hasil pencarian
+      if (found) {
+        rows[i].style.display = '';
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+
+  // Menambahkan event listener untuk memanggil fungsi pencarian saat nilai input berubah
+  document.getElementById('searchInput').addEventListener('input', searchTable);
+</script>
+
+
+
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">

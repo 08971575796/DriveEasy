@@ -1,3 +1,24 @@
+<?php
+// Koneksi ke database 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "driveeasy6";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Periksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Ambil data pelanggan dari database
+$sql = "SELECT * FROM loginuser";
+$result = $conn->query($sql);
+
+// Tutup koneksi database
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,68 +101,90 @@
 
           <div class="row">
             <div class="col-lg-12 mb-4">
-              <!-- Simple Tables -->
-              <div class="card">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
-                  <a href="tambahdatapelanggan.php" class="btn btn-primary">Tambah Data</a>
-                
-                </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Telepon</th>
-                        <th>Password</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>D001</td>
-                        <td>Andhung</td>
-                        <td>Bagor, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>Akusuma123</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger" name="hapus_datapelanggan.php" >Hapus</a></td>
-                      </tr>
-                      <tr>
-                        <td>D002</td>
-                        <td>Iqbal</td>
-                        <td>Mangundikaran, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>iqbal123</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
-                      </tr>
-                      <tr>
-                        <td>D003</td>
-                        <td>Yoga</td>
-                        <td>Jatikalen, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>yoga123</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
-                      </tr>
-      
-                      <tr>
-                        <td>D004</td>
-                        <td>Ardi</td>
-                        <td>Loceret, Nganjuk</td>
-                        <td>081234567890</td>
-                        <td>ardi123</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit<a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer"></div>
+            <div class="card">
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
               </div>
-            </div>
-          </div>
-          <!--Row-->
+              <div class="table-responsive">
+  <!-- Kolom Pencarian -->
+  <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
+  
+  <table class="table align-items-center table-flush">
+    <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      // Tampilkan data pelanggan dalam tabel
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          echo "<tr>";
+          echo "<td>" . $row["id_user"] . "</td>";
+          echo "<td>" . $row["username"] . "</td>";
+          echo "<td>" . $row["alamat"] . "</td>";
+          echo "<td>" . $row["email"] . "</td>";
+          echo "<td>" . $row["password"] . "</td>";
+          echo '<td>
+                  <a href="hapusdatapelanggan.php?id=' . $row["id_user"] . '" class="btn btn-sm btn-danger">Hapus</a>
+                </td>';
+          echo "</tr>";
+        }
+      } else {
+        echo "<tr><td colspan='6'>Tidak ada data pelanggan</td></tr>";
+      }
+      ?>
+    </tbody>
+  </table>
+</div>
 
+<script>
+  // Fungsi untuk melakukan pencarian dan filter tabel
+  function searchTable() {
+    // Mendapatkan nilai input pencarian
+    var input = document.getElementById('searchInput').value.toUpperCase();
+
+    // Mendapatkan baris-baris data pada tabel
+    var table = document.querySelector('.table-responsive table');
+    var rows = table.getElementsByTagName('tr');
+
+    // Iterasi melalui setiap baris tabel
+    for (var i = 1; i < rows.length; i++) { // Dimulai dari 1 untuk menghindari baris header
+      var rowData = rows[i].getElementsByTagName('td');
+      var found = false;
+
+      // Iterasi melalui setiap kolom data pada baris
+      for (var j = 0; j < rowData.length; j++) {
+        // Cek apakah nilai dalam kolom mengandung input pencarian
+        if (rowData[j]) {
+          var cellValue = rowData[j].textContent || rowData[j].innerText;
+          if (cellValue.toUpperCase().indexOf(input) > -1) {
+            found = true;
+            break;
+          }
+        }
+      }
+
+      // Menyembunyikan atau menampilkan baris berdasarkan hasil pencarian
+      if (found) {
+        rows[i].style.display = '';
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+
+  // Menambahkan event listener untuk memanggil fungsi pencarian saat nilai input berubah
+  document.getElementById('searchInput').addEventListener('input', searchTable);
+</script>
+
+                    
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">

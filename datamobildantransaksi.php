@@ -54,6 +54,7 @@
 }
 
     </style>
+
 </head>
 
 <body id="page-top">
@@ -128,21 +129,134 @@
                   <a href="tambahdatamobil.php" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush" id="dataTable">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>Id</th>
-                        <th>Nama Mobil</th>
-                        <th>Merek</th>
-                        <th>Warna</th>
-                        <th>Tahun</th>
-                        <th>Cc</th>
-                        <th>Bahan Bakar</th>
-                        <th>Harga Sewa</th>
-                        <th>Aksi</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
+  <!-- Kolom Pencarian -->
+  <div class="table-container">
+  <!-- Kolom Pencarian -->
+  <div class="search-container">
+    <input type="text" id="searchInput" class="search-input" placeholder="Cari...">
+    <i class="fas fa-search search-icon"></i>
+  </div>
+
+  <!-- Tabel -->
+  <div class="table-responsive p-3">
+    <table class="table align-items-center table-flush" id="dataTable">
+      <thead class="thead-light">
+        <tr>
+          <th>Id</th>
+          <th>Nama Mobil</th>
+          <th>Merek</th>
+          <th>Warna</th>
+          <th>Tahun</th>
+          <th>Cc</th>
+          <th>Bahan Bakar</th>
+          <th>Harga Sewa</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Isi tabel disini -->
+      </tbody>
+      <tfoot>
+        <!-- Footer tabel disini -->
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<!-- Font Awesome untuk ikon pencarian -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+  /* Gaya untuk kolom pencarian */
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .search-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+  }
+
+  /* Gaya tambahan untuk penampilan tabel */
+  .table-responsive {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px;
+  }
+
+  thead {
+    background-color: #f8f9fa;
+  }
+</style>
+
+<script>
+  // Fungsi untuk melakukan pencarian dan filter tabel
+  function searchTable() {
+    // Mendapatkan nilai input pencarian
+    var input = document.getElementById('searchInput').value.toUpperCase();
+
+    // Mendapatkan baris-baris data pada tabel
+    var table = document.getElementById('dataTable');
+    var rows = table.getElementsByTagName('tr');
+
+    // Iterasi melalui setiap baris tabel
+    for (var i = 0; i < rows.length; i++) {
+      var rowData = rows[i].getElementsByTagName('td');
+      var found = false;
+
+      // Iterasi melalui setiap kolom data pada baris
+      for (var j = 0; j < rowData.length; j++) {
+        // Cek apakah nilai dalam kolom mengandung input pencarian
+        if (rowData[j]) {
+          var cellValue = rowData[j].textContent || rowData[j].innerText;
+          if (cellValue.toUpperCase().indexOf(input) > -1) {
+            found = true;
+            break;
+          }
+        }
+      }
+
+      // Menyembunyikan atau menampilkan baris berdasarkan hasil pencarian
+      if (found) {
+        rows[i].style.display = '';
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+
+  // Menambahkan event listener untuk memanggil fungsi pencarian saat nilai input berubah
+  document.getElementById('searchInput').addEventListener('input', searchTable);
+</script>
+
                      
               <table class="table align-items-center table-flush" id="dataTable">
                 <!-- ... (seperti sebelumnya) -->
@@ -221,78 +335,132 @@
                     .then(message => {
                         alert(message);
                         displayCarData();
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+
+        function editData(idMobil) {
+            // Fetch car data based on ID
+            fetch(`get_car_by_id.php?id=${idMobil}`)
+                .then(response => response.json())
+                .then(car => {
+                    // Populate the edit form with the retrieved data
+                    document.getElementById('editId').value = car.id_mobil;
+                    document.getElementById('editNamaMobil').value = car.nama_mobil;
+                    document.getElementById('editMerk').value = car.merk;
+                    document.getElementById('editWarna').value = car.warna;
+                    document.getElementById('editTahun').value = car.tahun;
+                    document.getElementById('editCc').value = car.cc;
+                    document.getElementById('editBahanBakar').value = car.bahan_bakar;
+                    document.getElementById('editHargaSewa').value = car.harga_sewa;
+                    // Populate other form fields as needed
+
+                    // Show the edit form
+                    document.getElementById('editForm').style.display = 'block';
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        
+        function cancelEdit() {
+            // Hide the edit form
+            document.getElementById('editForm').style.display = 'none';
+        }
+         // Event listener for the edit form submission
+         document.getElementById('carForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(event.target);
+
+            // Send the updated data to the server for processing
+            fetch('update_car_data.php', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.text())
+                .then(message => {
+                    alert(message);
+                    // Reload the table after updating data
+                    displayCarData();
+                    // Hide the edit form
+                    document.getElementById('editForm').style.display = 'none';
+                })
+                .catch(error => console.error('Error:', error));
+                
+        });
+
+        window.onload = displayCarData;
     </script>
+<?php
+// Koneksi ke database (gantilah dengan informasi koneksi Anda)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "driveeasy6";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Periksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Ambil data transaksi dari database
+$sql = "SELECT * FROM booking";
+$result = $conn->query($sql);
+
+// Tutup koneksi database
+$conn->close();
+?>
 
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
-                  
                 </div>
                 <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush table-hover" id="dataTableHover">
+                <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     <thead class="thead-light">
-                      <tr>
-                        <th>Nama</th>
-                        <th>Jenis Mobil (Nopol)</th>
-                        <th>Lama Sewa</th>
-                        <th>Tanggal Sewa</th>
-                        <th>Jumlah Bayar</th>
-                      
-                      </tr>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nama</th>
+                            <th>ID User</th>
+                            <th>Nomor Hp</th>
+                            <th>Tanggal</th>
+                            <th>Jam</th>
+                            <th>Foto KTP</th>
+                            <th>ID Mobil</th>
+                            <th>Aksi</th>
+                        </tr>
                     </thead>
-                    <tfoot>
-                      <tr>
-                        <th>Nama</th>
-                        <th>Jenis Mobil (Nopol)</th>
-                        <th>Lama Sewa</th>
-                        <th>Tanggal Sewa</th>
-                        <th>Jumlah Bayar</th>
-                       
-                      </tr>
-                    </tfoot>
                     <tbody>
-                      <tr>
-                        <td>Septian Yoga eruh</td>
-                        <td>Inova Reborn (AG 4356 WF)</td>
-                        <td>1 Hari</td>
-                        <td>21 Oktober-22 Oktober</td>
-                        <td>300 Ribu</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>Andhung Peyot</td>
-                        <td>Jazz (AG 5567 XY)</td>
-                        <td>12 Jam</td>
-                        <td>21 Oktober-21 Oktober</td>
-                        <td>250 Ribu</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>Ardhi Suseno</td>
-                        <td>Avanza (AG 5471 VY)</td>
-                        <td>1 Hari</td>
-                        <td>22 Oktober-23 Oktober</td>
-                        <td>200 Ribu</td>
-                       
-                      </tr>
-                      <tr>
-                        <td>David MU</td>
-                        <td>Xenia (AG 1231 GH)</td>
-                        <td>1 Hari</td>
-                        <td>22 Oktober-23 Oktober</td>
-                        <td>200 Ribu</td>
-                       
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--Row-->
+                        <?php
+                        // Tampilkan data transaksi dalam tabel
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["id_booking"] . "</td>";
+                                echo "<td>" . $row["nama"] . "</td>";
+                                echo "<td>" . $row["id_user"] . "</td>";
+                                echo "<td>" . $row["no_hp"] . "</td>";
+                                echo "<td>" . $row["tanggal"] . "</td>";
+                                echo "<td>" . $row["jam"] . "</td>";
+                                echo "<td><img src='" . $row["foto_ktp"] . "' alt='Foto KTP' style='max-width: 100px;'></td>";
+                                echo "<td>" . $row["id_mobil"] . "</td>";
+                                echo "<td><a href='proseshapusdatatransaksi.php?id=" . $row["id_booking"] . "' class='btn btn-sm btn-danger'>Hapus</a></td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='8'>Tidak ada data transaksi</td></tr>";
+                        }
+                        ?>
+                        
 
-          
+                    </tbody>
+                </table>
+            </div>
+                   
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -357,5 +525,4 @@
   </script>
 
 </body>
-
 </html>

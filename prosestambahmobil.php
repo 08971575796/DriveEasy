@@ -1,5 +1,5 @@
 <?php
-$koneksi = new mysqli ("localhost", "root", "", "driveeasy2");
+$koneksi = new mysqli ("localhost", "root", "", "driveeasy6");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama_mobil = $_POST["nama_mobil"];
     $merk = $_POST["merk"];
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Koneksi gagal: " . $koneksi->connect_error);
     }
     // Siapkan query SQL untuk memasukkan data
-    $sql = "INSERT INTO mobil (nama_mobil, merk, warna, tahun, cc, bahan_bakar, harga_sewa) VALUES ('$nama_mobil', '$merk', '$warna', '$tahun', '$cc', '$bahan_bakar', '$harga_sewa')";
+    $sql = "INSERT INTO stock_mobil (nama_mobil, merk, warna, tahun, cc, bahan_bakar, harga_sewa) VALUES ('$nama_mobil', '$merk', '$warna', '$tahun', '$cc', '$bahan_bakar', '$harga_sewa')";
 
     if ($koneksi->query($sql) === TRUE) {
         ?>

@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "driveeasy2";
+    $dbname = "driveeasy6";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     }
 
     // Perform the deletion based on the ID
-    $sql = "DELETE FROM mobil WHERE id_mobil = $idMobil";
+    $sql = "DELETE FROM stock_mobil WHERE id_mobil = $idMobil";
 
     if ($conn->query($sql) === TRUE) {
         echo "data berhasil di hapus";

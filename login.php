@@ -31,18 +31,7 @@
   </head>
   <body>
     
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Batal</a></li>
-	      </div>
-	    </div>
-	  </nav>
+	  
     <!-- END nav -->
     
 <div class="sign-in">
@@ -75,7 +64,8 @@
               </div>
             </div>
           </div>
-          <button class="button"><div class="btn btn-warning">Login</a></div></button>
+          <button class="button"><div class="btn btn-warning">Login</div></button>
+          <a href="index.html"  class="btn btn-sm btn-danger">Batal</a>
           <a href="lupapassword.php">
             <span class="text-wrapper-4">Forgot Password?</span>
           </a>

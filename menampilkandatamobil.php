@@ -2,7 +2,7 @@
 include 'koneksi.php';
 
 // Query untuk menampilkan data mobil
-$query = "SELECT * FROM mobil";
+$query = "SELECT * FROM stock_mobil";
 $result = $koneksi->query($query);
 
 if ($result->num_rows > 0) {
