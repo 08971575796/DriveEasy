@@ -63,22 +63,22 @@
     			<div class="col-md-12	featured-top">
     				<div class="row no-gutters">
 	  					<div class="col-md-4 d-flex align-items-center">
-	  						<form action="#" class="request-form ftco-animate bg-primary">
-		          		<h2>
-			    				<div class="form-group">
-			    					<div class="block-18">
-                      <div class="row">
-                      <div class="whast-app">
+	  					<form action="#" class="request-form ftco-animate" style="background-color: #ffe688;">
+              <h2 style="color: #000;">
+              <div class="block-18">
+                <div class="row">
+                    <div class="whast-app">
                         <img class="ellipse" src="images/Ellipse 213.png" />
                         <div class="chat-admin">DriveEasy<br />Download untuk android</div>
                         <button class="btn btn-sm btn-danger download">
-                              <div class="text-wrapper">Download</div>
-                            </button>
-                        </div>
-                      </div>
-                    </h2>
-			    			</form>
-	  					</div>
+                            <div class="text-wrapper">Download</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h2>
+	  					
 	  					<div class="col-md-8 d-flex align-items-center">
 	  						<div class="services-wrap rounded-right w-100">
 	  							<h3 class="heading-section mb-4">Mudah, Cepat Dan Aman</h3>
@@ -187,11 +187,10 @@ $conn->close();
 					</div>
 					<div class="col-md-6 wrap-about ftco-animate">
 	          <div class="heading-section heading-section-white pl-md-5">
-	          	<span class="subheading">Ulasan</span>
-	            <h2 class="mb-4">Tentang Kami</h2>
-
-	            <p>Kami mempunyai banyak cabang di kabupaten Nganjuk, dengan harga murah dan terjangkau anda sudah dapat menyewa kendaraan roda empat dari kami. Kami akan selalu bekerja dengan profesional karena kenyamanan pelanggan adalah prioritas kami.</p>
-	            <p>Dengan pelayanan penuh kepada pelanggan, kami tidak lupa memberikan kesempatan untuk berpartisipasi dalam perbaikan lebih lanjut atas kenyamanan mobilitas yang telah kami sediakan</p>
+	          	<span class="subheading" style="color: #000;">Ulasan</span>
+	            <h2 class="mb-4" style="color: #000;">Tentang Kami</h2>
+	            <p style="color: #000;">Kami mempunyai banyak cabang di kabupaten Nganjuk, dengan harga murah dan terjangkau anda sudah dapat menyewa kendaraan roda empat dari kami. Kami akan selalu bekerja dengan profesional karena kenyamanan pelanggan adalah prioritas kami.</p>
+	            <p style="color: #000;">Dengan pelayanan penuh kepada pelanggan, kami tidak lupa memberikan kesempatan untuk berpartisipasi dalam perbaikan lebih lanjut atas kenyamanan mobilitas yang telah kami sediakan</p>
 
 	          </div>
 					</div>

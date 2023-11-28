@@ -1,6 +1,6 @@
 <?php
 // Hubungkan ke database (sesuaikan dengan koneksi database Anda)
-$koneksi = new mysqli ("localhost", "root", "", "driveeasy2");
+$koneksi = new mysqli ("localhost", "root", "", "driveeasy6");
 
 if ($koneksi->connect_error) {
     die("Koneksi database gagal: " . $koneksi->connect_error);

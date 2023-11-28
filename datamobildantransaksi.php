@@ -61,11 +61,11 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
           <img src="images/logo/DriveEasy_putih.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Drive Easy</div>
+        <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
@@ -111,7 +111,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" style="background-color: #ffe688;">
         </nav>
         <!-- Topbar -->
         <!-- Container Fluid-->
@@ -126,7 +126,7 @@
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Mobil</h6>
-                  <a href="tambahdatamobil.php" class="btn btn-primary">Tambah Data</a>
+                  <a href="tambahdatamobil.php" class="btn btn-warning">Tambah Data</a>
                 </div>
                 <div class="table-responsive p-3">
   <!-- Kolom Pencarian -->
@@ -283,7 +283,7 @@
             <label for="editHargaSewa">Harga Sewa:</label>
             <input type="text" id="editHargaSewa" name="editHargaSewa" required><br>
             <!-- Add other input fields as needed -->
-            <button type="submit" class="btn btn-sm btn-primary">Simpan Perubahan</button>
+            <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
             <button type="button" class="btn btn-sm btn-danger" onclick="cancelEdit()">Batal</button>
         </form>
     </div>
@@ -316,7 +316,7 @@
                     <td>${car.bahan_bakar}</td>
                     <td>${car.harga_sewa}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-primary" onclick="editData(${car.id_mobil})">Edit</a>
+                        <a href="#" class="btn btn-warning" onclick="editData(${car.id_mobil})">Edit</a>
                         <a href="#" class="btn btn-sm btn-danger" onclick="hapusData(${car.id_mobil})">Hapus</a>
                     </td>
                 `;

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,17 +34,25 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Your existing styles */
+
+        .custom-text-color {
+            color: #000; /* Black color */
+        }
+    </style>
 </head>
 
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
           <img src="images/logo/DriveEasy_putih.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Drive Easy</div>
+        <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -89,16 +98,16 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top"style="background-color: #ffe688;">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" style="color: #000;"></i>
           </button>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Admin</span>
+                <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <span class="ml-2 d-none d-lg-inline custom-text-color small">Admin</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="profil.php">
@@ -306,8 +315,8 @@
             <!-- Invoice Example -->
             <div class="col-xl-8 col-lg-7 mb-4">
               <div class="card">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Data Pelanggan</h6>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style="background-color: #ffe688;">
+                <h6 class="m-0 font-weight-bold custom-text-color">Data Pelanggan</h6>
                   <a class="m-0 float-right btn btn-danger btn-sm" href="datapelanggan.php">Lihat Selengkapnya <i
                       class="fas fa-chevron-right"></i></a>
                 </div>
@@ -368,8 +377,8 @@
             <!-- Message From Customer-->
             <div class="col-xl-4 col-lg-5 ">
               <div class="card">
-                <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-light">Kritik & Saran</h6>
+              <div class="card-header py-4" style="background-color: #ffe688; d-flex: flex-row; align-items: center; justify-content: between;">
+              <h6 class="m-0 font-weight-bold" style="color: black;">Kritik & Saran</h6>
                 </div>
                 <div>
                 <div class="customer-message align-items-center">
@@ -449,7 +458,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Batal</button>
-                  <a href="login.php" class="btn btn-primary">Logout</a>
+                  <a href="proses_logout.php" class="btn btn-primary">Logout</a>
                 </div>
               </div>
             </div>

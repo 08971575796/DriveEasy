@@ -18,11 +18,11 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardadmin.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
           <img src="images/logo/DriveEasy_putih.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Drive Easy</div>
+        <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
@@ -68,7 +68,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" style="background-color: #ffe688;">
         </nav>
         <!-- Topbar -->
         <!-- Container Fluid-->
@@ -76,9 +76,9 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Ulasan Pelanggan</h1>
           </div>
-          <div class="card">
-  <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-    <h6 class="m-0 font-weight-bold text-light">Kritik & Saran</h6>
+          <div class="card" >
+          <div class="card-header py-4" style="background-color: #ffe688; d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-dark">Kritik & Saran</h6>
     <!-- Kolom Pencarian -->
     <div class="search-container">
       <input type="text" id="searchInput" class="form-control" placeholder="Cari...">

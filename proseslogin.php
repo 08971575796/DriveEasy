@@ -5,9 +5,8 @@ include ("login.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $berhasil = "Berhasil Login";
-    $successMessage = "Login successful";
-    $erorMessage = "Login failed. Please try again.";
+  
+
 
 
     // Query SQL untuk memeriksa apakah pengguna terdaftar di tabel admin
@@ -18,23 +17,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     
-if (mysqli_num_rows($result) == 1) {
-    // Jika pengguna terdaftar, alihkan ke halaman welcome.php atau halaman lain yang sesuai
-    header("location: dashboardadmin.php");
-    // $response = array('status' => 'success', 'message' => 'Login berhasil');
-    ?>
-    <script>
-      alert ("Email atau Password Salah, Mohon Coba Lagi.");
-      window.location.replace("login.php");
-    </script>
-     <?php
-    exit();
-} else {
+    if (mysqli_num_rows($result) >= 1) {
+      // Jika pengguna terdaftar, alihkan ke halaman welcome.php atau halaman lain yang sesuai
+      session_start(); // Mulai sesi jika belum dimulai
+      $_SESSION['email'] = $email; // Simpan email dalam sesi
       ?>
-        <script>
-          alert ("Email atau Password Salah, Mohon Coba Lagi.");
+      <script>
+          alert("Email benar, Selamat datang!");
+          window.location.replace("dashboardadmin.php");
+          </script>
+      <?php
+      header("location: dashboardadmin.php");
+  } else {
+      ?>
+      <script>
+          alert("Email atau Password Salah, Mohon Coba Lagi.");
           window.location.replace("login.php");
-        </script>
-      <?php
-}
+      </script>
+      <?php
+      exit();
+  }
+  
 }

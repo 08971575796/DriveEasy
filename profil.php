@@ -1,86 +1,125 @@
+<?php
+session_start(); // Mulai sesi
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="images/logo/DriveEasy_putih.png" rel="icon">
-  <title>Drive Easy - Ulasan</title>
-  <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ruang-admin.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="globals.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Admin</title>
+
+    <!-- Add a link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Add custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .user-profile {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        a {
+            color: #dc3545;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+    </style>
 </head>
+<body>
+<?php
 
-<body id="page-top">   
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-        </nav>
-        <body>
-          <div class="box">
-          <div class="profil1">
-            <div class="overlap-group90">
-              <div class="overlapsatu">
-                <div class="text-wrapper">:</div>
-                <div class="div">Admin</div>
-              </div>
-              <div class="overlap-20">
-                <div class="text-wrapper-20">:</div>
-                <div class="text-wrapper-30">admin@gmail.com</div>
-                <div class="text-wrapper-40">Username</div>
-              </div>
-              <div class="overlap-30">
-                <div class="text-wrapper-20">:</div>
-                <div class="text-wrapper-50">admin</div>
-                <div class="text-wrapper-40">Password</div>
-              </div>
-              <div class="text-wrapper-60">Nama</div>
-              <div class="overlap-40">
-                <img class="customer" src="images/Customer0.png" />
-                <img class="vector" src="images/Vector0.svg" />
-                <img class="img" src="images/Vector01.svg" />
-              </div>
-            </div>
-          </div>
-      </div>
-    </body>
-    </div>
-  </div>
-</div>
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a target="_blank">Kelompok 4C</a></b>
-            </span>
-          </div>
+// Periksa apakah pengguna sudah login
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Ambil nilai email dari sesi
+$email = $_SESSION['email'];
+
+// Koneksi ke basis data (gantilah dengan informasi koneksi yang sesuai)
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "driveeasy6";
+
+$conn = mysqli_connect($host, $user, $password, $database);
+
+// Periksa koneksi basis data
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Query untuk mengambil informasi pengguna dari database
+$query = "SELECT * FROM loginadmin WHERE email = '$email'";
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
+
+// Ambil data pengguna dari hasil kueri
+$row = mysqli_fetch_assoc($result);
+$username = $row['useradmin'];
+$password = $row['password']; // Pastikan untuk tidak menampilkan password secara langsung
+
+// Tutup koneksi basis data
+mysqli_close($conn);
+?>
+
+
+<div class="user-profile">
+    <h2>Admin Profil</h2>
+    <p>Email: <?php echo $email; ?></p>
+    <p>Useradmin: <?php echo $username; ?></p>
+    <p>Password: <?php echo $password; ?></p>
+
+    <!-- Add additional information from the database if needed -->
+    <!-- Example: <p>Name: <?php echo $name; ?></p> -->
+    <?php if (!empty($logout_message)): ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $logout_message; ?>
         </div>
-      </footer>
-      <!-- Footer -->
-    </div>
-  </div>
+    <?php endif; ?>
+    <a href="proses_logout.php"class="btn btn-sm btn-primary">Logout</a>
+    <a href="dashboardadmin.php" class="btn btn-sm btn-danger">Batal</a>
+</div>
 
-  <!-- Scroll to top -->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+<!-- Footer -->
+<div class="footer">
+    <span>&copy; <script> document.write(new Date().getFullYear()); </script> - Developed by <b><a target="_blank">Kelompok 4C</a></b></span>
+</div>
 
-  <script src="scss/bootstrap/vendor/jquery/jquery.min.js"></script>
-  <script src="scss/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="scss/bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/ruang-admin.min.js"></script>
-  <!-- Page level plugins -->
-  <script src="scss/bootstrap/vendor/chart.js/Chart.min.js"></script>
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/chart-bar-demo.js"></script>
-</body>
+<!-- Add links to Bootstrap and jQuery scripts at the end of the body for better performance -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>

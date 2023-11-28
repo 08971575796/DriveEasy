@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,12 +26,22 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Disable scrolling */
+        }
+
+        /* The rest of your styles remain unchanged */
+    </style>
   </head>
   <body>
     
 	  
-    <!-- END nav -->
+  <script src="js/jquery.min.js"></script>
     
 <div class="sign-in">
 <div class="div">
@@ -65,20 +74,21 @@
             </div>
           </div>
           <button class="button"><div class="btn btn-warning">Login</div></button>
-          <a href="index.html"  class="btn btn-sm btn-danger">Batal</a>
+          <a href="index.php"  class="btn btn-sm btn-danger">Batal</a>
           <a href="lupapassword.php">
-            <span class="text-wrapper-4">Forgot Password?</span>
+            <span class="text-wrapper-4">Lupa Password?</span>
           </a>
         </div>
       </div>
     </div>
     <p class="not-registered-yet">
-      <span class="text-wrapper-6">Not registered yet?</span>
+      <span class="text-wrapper-6">Belum Punya Akun?</span>
       <a href="register.php">
-        <span class="text-wrapper-7"> Create an account</span>
+        <span class="text-wrapper-7">Buat Akun</span>
       </a>
     </p>
   </form>
+  
 </div>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!-- lupapassword.php -->
+<!-- reset_password.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,50 +7,54 @@
     <title>Reset Password</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
         }
 
         .reset-form {
             background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-        }
-
-        .reset-form h2 {
             text-align: center;
         }
 
-        .reset-form label {
+        h2 {
+            color: #333;
+        }
+
+        label {
             display: block;
-            margin-bottom: 8px;
+            margin: 10px 0 5px;
+            color: #666;
         }
 
-        .reset-form input {
+        input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
+            padding: 10px;
+            margin-bottom: 10px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        .reset-form button {
+        button {
             background-color: #ffc107;
-            color: black;
+            color: #000;
             padding: 10px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            width: 100%;
         }
 
-        .reset-form button:hover {
+        button:hover {
             background-color: #45a049;
         }
     </style>
@@ -59,9 +63,15 @@
 
 <div class="reset-form">
     <h2>Reset Password</h2>
-    <form action="proses_reset_password.php" method="post">
+    <form action="proses_reset_password_baru.php" method="post">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
+
+        <label for="password">Password Baru:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Konfirmasi Password Baru:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
 
         <button type="submit">Reset Password</button>
     </form>

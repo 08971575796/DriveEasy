@@ -49,7 +49,7 @@
                 <form method="POST" action="prosesdaftar.php" autocomplete="off" name="register">
                 <div class="frame">
                     <div class="frame-2">
-                        <div class="text-wrapper-2">Sign Up</div>
+                        <div class="text-wrapper-2">Daftar Akun</div>
                         <div class="frame-3">
                             <div class="text-input">
                                 <div class="text-wrapper-3">Username</div>
@@ -74,10 +74,10 @@
                             </div>
                         </div>
                             <div class="text-wrapper-4">
-                        <button class="button"><div class="btn btn-warning">Sign Up</div></button>
+                        <button class="button"><div class="btn btn-warning">Daftar</div></button>
                     </div>
                     <p class="already-have-an">
-                        <span class="text-wrapper-4">Already have an account? </span> 
+                        <span class="text-wrapper-4">Sudah Punya Akun? </span> 
                         <a href="login.php">
                             <span class="text-wrapper-5">Sign In</div></span>
                         </a>
