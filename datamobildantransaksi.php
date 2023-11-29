@@ -215,8 +215,16 @@
   thead {
     background-color: #f8f9fa;
   }
-</style>
+    
+        .search-container {
+            margin-bottom: 15px;
+        }
 
+        .search-input {
+            padding: 8px;
+        }
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script>
   // Fungsi untuk melakukan pencarian dan filter tabel
   function searchTable() {
@@ -419,48 +427,71 @@ $conn->close();
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
                 </div>
-                <div class="table-responsive p-3">
-                <table class="table align-items-center table-flush table-hover" id="dataTableHover">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>Id</th>
-                            <th>Nama</th>
-                            <th>ID User</th>
-                            <th>Nomor Hp</th>
-                            <th>Tanggal</th>
-                            <th>Jam</th>
-                            <th>Foto KTP</th>
-                            <th>ID Mobil</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        // Tampilkan data transaksi dalam tabel
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . $row["id_booking"] . "</td>";
-                                echo "<td>" . $row["nama"] . "</td>";
-                                echo "<td>" . $row["id_user"] . "</td>";
-                                echo "<td>" . $row["no_hp"] . "</td>";
-                                echo "<td>" . $row["tanggal"] . "</td>";
-                                echo "<td>" . $row["jam"] . "</td>";
-                                echo "<td><img src='" . $row["foto_ktp"] . "' alt='Foto KTP' style='max-width: 100px;'></td>";
-                                echo "<td>" . $row["id_mobil"] . "</td>";
-                                echo "<td><a href='proseshapusdatatransaksi.php?id=" . $row["id_booking"] . "' class='btn btn-sm btn-danger'>Hapus</a></td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='8'>Tidak ada data transaksi</td></tr>";
-                        }
-                        ?>
-                        
+                <div class="search-container">
+                  <input type="text" id="SearchInput" class="search-input" placeholder="Cari...">
+                  <i class="fas fa-search search-icon"></i>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-                    </tbody>
-                </table>
-            </div>
-                   
+                <script>
+    $(document).ready(function () {
+        $("#SearchInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#dataTableHover tbody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+        <div class="table-responsive p-3">
+            <table class="table table-bordered table-hover" id="dataTableHover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nama</th>
+                        <th>ID User</th>
+                        <th>Nomor Hp</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Foto KTP</th>
+                        <th>ID Mobil</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Tampilkan data transaksi dalam tabel
+                    $row_color = "even";
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $row_color = ($row_color == "odd") ? "even" : "odd";
+                            echo "<tr class='" . $row_color . "'>";
+                            echo "<td>" . $row["id_booking"] . "</td>";
+                            echo "<td>" . $row["nama"] . "</td>";
+                            echo "<td>" . $row["id_user"] . "</td>";
+                            echo "<td>" . $row["no_hp"] . "</td>";
+                            echo "<td>" . $row["tanggal"] . "</td>";
+                            echo "<td>" . $row["jam"] . "</td>";
+                            echo "<td><img src='" . $row["foto_ktp"] . "' alt='Foto KTP' style='max-width: 100px;'></td>";
+                            echo "<td>" . $row["id_mobil"] . "</td>";
+                            echo "<td><a href='proseshapusdatatransaksi.php?id=" . $row["id_booking"] . "' class='btn btn-sm btn-danger'>Hapus</a></td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='9'>Tidak ada data transaksi</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"

@@ -107,8 +107,9 @@ mysqli_close($conn);
             <?php echo $logout_message; ?>
         </div>
     <?php endif; ?>
-    <a href="proses_logout.php"class="btn btn-sm btn-primary">Logout</a>
-    <a href="dashboardadmin.php" class="btn btn-sm btn-danger">Batal</a>
+    <a href="edit_profil.php" class="btn btn-sm btn-warning" style="font-weight: bold; color: white;">Edit Profil</a>
+    <a href="proses_logout.php"class="btn btn-sm btn-primary" style="font-weight: bold; color: white;">Logout</a>
+    <a href="dashboardadmin.php" class="btn btn-sm btn-danger" style="font-weight: bold; color: white;">Batal</a>
 </div>
 
 <!-- Footer -->

@@ -17,8 +17,11 @@ if ($conn->connect_error) {
 $email = $_POST['email'];
 $newPassword = $_POST['password']; // Password tidak di-hash
 
+// Enkripsi password sebelum disimpan
+$hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
 // Perbarui password di database untuk email yang sesuai
-$sql = "UPDATE loginadmin SET password='$newPassword' WHERE email='$email'";
+$sql = "UPDATE loginadmin SET password='$hashedPassword' WHERE email='$email'";
 
 if ($conn->query($sql) === TRUE) {
     ?>

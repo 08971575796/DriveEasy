@@ -28,7 +28,6 @@
     
   </head>
   <body>
-    
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,14 +66,29 @@
                                 <div class="text-wrapper-3">Password</div>
                                 <div class="group">
                                     <div class="overlap-group">
-                                        <div class="password"></div><input type="password" class="overlap-group" id="floatingPassword" placeholder="Password" name="password">
-                                        <img class="ant-design-eye" src="images/ant-design-eye-outlined.svg" />
+                                        <div class="password-container">
+                                            <input type="password" class="overlap-group" id="floatingPassword" placeholder="Password" name="password">
+                                            <img class="ant-design-eye" id="toggleButton" src="images/ant-design-eye-outlined.svg" onclick="togglePassword()">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <script>
+                                function togglePassword() {
+                                    var passwordInput = document.getElementById("floatingPassword");
+                                    var toggleButton = document.getElementById("toggleButton");
+
+                                    if (passwordInput.type === "password") {
+                                        passwordInput.type = "text";
+                                        toggleButton.src = "images/ant-design-eye-hide.png"; // Ganti dengan gambar mata terbuka
+                                    } else {
+                                        passwordInput.type = "password";
+                                        toggleButton.src = "images/ant-design-eye-outlined.svg"; // Ganti dengan gambar mata tertutup
+                                    }
+                                }
+                            </script>
                             <div class="text-wrapper-4">
-                        <button class="button"><div class="btn btn-warning">Daftar</div></button>
+                        <button class="button"><div class="btn btn-warning" style="font-weight: bold; color: black;">Daftar</div></button>
                     </div>
                     <p class="already-have-an">
                         <span class="text-wrapper-4">Sudah Punya Akun? </span> 

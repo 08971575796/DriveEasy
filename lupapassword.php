@@ -63,7 +63,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <button type="submit">Reset Password</button>
+        <button type="submit"style="font-weight: bold; color: black;">Reset Password</button>
     </form>
 </div>
 

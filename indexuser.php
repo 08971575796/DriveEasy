@@ -20,8 +20,6 @@
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -34,11 +32,6 @@
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
 	      </div>
 	    </div>
 	  </nav>
@@ -52,12 +45,6 @@
           	<div class="text w-100 text-center mb-md-5 pb-md-5">
 	            <h1 class="mb-4">Cara Cepat Rental Mobil Di Nganjuk</h1>
 	            <p style="font-size: 18px;">Kami mempersembahkan sebuah cara menyewa mobil di Nganjuk dengan modern,efisien dan cepat</p>
-	            	<div class="icon d-flex align-items-center justify-content-center">
-	            		<span class="ion-ios-play"></span>
-	            	</div>
-	            	<div class="heading-title ml-5">
-		            	<span>Easy steps for renting a car</span>
-	            	</div>
 	            </a>
             </div>
           </div>
@@ -71,29 +58,31 @@
     			<div class="col-md-12	featured-top">
     				<div class="row no-gutters">
 	  					<div class="col-md-4 d-flex align-items-center">
-	  						<form action="#" class="request-form ftco-animate bg-primary">
-		          		<h2>
-			    				<div class="form-group">
-			    					<div class="block-18">
-                      <div class="row">
-                      <div class="whast-app">
+	  					<form action="#" class="request-form ftco-animate" style="background-color: #ffe688;">
+              <h2 style="color: #000;">
+              <div class="block-18">
+                <div class="row">
+                    <div class="whast-app">
                         <img class="ellipse" src="images/Ellipse 213.png" />
-                        <div class="chat-admin">DriveEasy<br />Download For Mobile</div>
-                        <button class="download" class="btn btn-primary btn-lg" class="text-wrapper">Download</div></div></button>
-                        </div>
-                      </div>
-                    </h2>
-			    			</form>
-	  					</div>
+                        <div class="chat-admin">DriveEasy<br />Download untuk android</div>
+                        <button class="btn btn-sm btn-danger download">
+                            <div class="text-wrapper">Download</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h2>
+	  					
 	  					<div class="col-md-8 d-flex align-items-center">
 	  						<div class="services-wrap rounded-right w-100">
-	  							<h3 class="heading-section mb-4">Better Way to Rent Your Perfect Cars</h3>
+	  							<h3 class="heading-section mb-4">Mudah, Cepat Dan Aman</h3>
 	  							<div class="row d-flex mb-4">
 					          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
 					            <div class="services w-100 text-center">
 				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
 				              	<div class="text w-100">
-					                <h3 class="heading mb-2">choose the car you need</h3>
+					                <h3 class="heading mb-2">Setia menemani perjalanan anda</h3>
 				                </div>
 					            </div>      
 					          </div>
@@ -101,7 +90,7 @@
 					            <div class="services w-100 text-center">
 				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
 				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Select the Best Deal</h3>
+					                <h3 class="heading mb-2">Transaksi mudah dan aman</h3>
 					              </div>
 					            </div>      
 					          </div>
@@ -109,12 +98,11 @@
 					            <div class="services w-100 text-center">
 				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
 				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Reserve Your Rental Car</h3>
+					                <h3 class="heading mb-2">Pilihan mobil beragam jenisnya</h3>
 					              </div>
 					            </div>      
 					          </div>
 					        </div>
-					        <p><a href="#" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p>
 	  						</div>
 	  					</div>
 	  				</div>
@@ -131,70 +119,61 @@
             <h2 class="mb-2">Mobil Unggulan Kami</h2>
           </div>
         </div>
-    		<div class="row">
-    			<div class="col-md-12">
-    				<div class="carousel-car owl-carousel">
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/inova\ reborn\ hitam.jpg);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Inova Reborn</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Toyota</span>
-			    						<p class="price ml-auto">Rp.150.000; <span>/12 Jam</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/image\ 1.png);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Avanza 2017</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Toyota</span>
-			    						<p class="price ml-auto">Rp.150.000; <span>/12 Jam</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/Imagejazz.png);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Jazz 2017</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Honda</span>
-			    						<p class="price ml-auto">Rp.150.000; <span>/12 Jam</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/Image.png);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Xenia 2017</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Daihatsu</span>
-			    						<p class="price ml-auto">Rp.150.000; <span>/12 Jam</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+    		<?php
+// Koneksi ke database (gantilah dengan informasi koneksi Anda)
+$servername = "103.247.11.134";
+$username = "root";
+$password = "tifnganjuk321";
+$dbname = "tifz1761_driveeasy";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Periksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil data dari tabel mobil (gantilah dengan nama tabel yang sesuai)
+$sql = "SELECT * FROM mobil";
+$result = $conn->query($sql);
+
+// Periksa apakah query berhasil dijalankan
+if ($result) {
+    echo '<div class="row">
+            <div class="col-md-12">
+                <div class="carousel-car owl-carousel">';
+    
+    // Loop melalui setiap baris hasil query
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="item">
+                <div class="car-wrap rounded ftco-animate">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url(images/' . $row['gambar_mobil'] . ');">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a href="#">' . $row['merk'] . '</a></h2>
+                        <div class="d-flex mb-3">
+                            <span class="cat">' . $row['Status'] . '</span>
+                            
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                    </div>
+                </div>
+            </div>';
+    }
+
+    echo '</div>
+        </div>
+    </div>';
+
+    // Bebaskan hasil query
+    $result->free_result();
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Tutup koneksi database
+$conn->close();
+?>
 
     <section class="ftco-section ftco-about">
 			<div class="container">
@@ -203,11 +182,10 @@
 					</div>
 					<div class="col-md-6 wrap-about ftco-animate">
 	          <div class="heading-section heading-section-white pl-md-5">
-	          	<span class="subheading">Ulasan</span>
-	            <h2 class="mb-4">Tentang Kami</h2>
-
-	            <p>Kami mempunyai banyak cabang di kabupaten Nganjuk, dengan harga murah dan terjangkau anda sudah dapat menyewa kendaraan roda empat dari kami. Kami akan selalu bekerja dengan profesional karena kenyamanan pelanggan adalah prioritas kami.</p>
-	            <p>Dengan pelayanan penuh kepada pelanggan, kami tidak lupa memberikan kesempatan untuk berpartisipasi dalam perbaikan lebih lanjut atas kenyamanan mobilitas yang telah kami sediakan</p>
+	          	<span class="subheading" style="color: #000;">Ulasan</span>
+	            <h2 class="mb-4" style="color: #000;">Tentang Kami</h2>
+	            <p style="color: #000;">Kami mempunyai banyak cabang di kabupaten Nganjuk, dengan harga murah dan terjangkau anda sudah dapat menyewa kendaraan roda empat dari kami. Kami akan selalu bekerja dengan profesional karena kenyamanan pelanggan adalah prioritas kami.</p>
+	            <p style="color: #000;">Dengan pelayanan penuh kepada pelanggan, kami tidak lupa memberikan kesempatan untuk berpartisipasi dalam perbaikan lebih lanjut atas kenyamanan mobilitas yang telah kami sediakan</p>
 
 	          </div>
 					</div>

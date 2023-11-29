@@ -16,18 +16,29 @@ if ($conn->connect_error) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Hapus data pelanggan dari database
-    $sql = "DELETE FROM loginuser WHERE id_user = $id";
+    // Ambil password dari database sebelum dihapus
+    $getPasswordQuery = "SELECT password FROM loginuser WHERE id_user = $id";
+    $result = $conn->query($getPasswordQuery);
 
-    if ($conn->query($sql) === TRUE) {
-        ?>
-        <script>
-        alert("<?php echo "Data berhasil di hapus"?>");
-        window.location.replace('datapelanggan.php');
-      </script>
-      <?php
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $hashedPassword = $row["password"];
+
+        // Hapus data pelanggan dari database
+        $deleteQuery = "DELETE FROM loginuser WHERE id_user = $id";
+
+        if ($conn->query($deleteQuery) === TRUE) {
+            ?>
+            <script>
+                alert("<?php echo "Data berhasil dihapus"?>");
+                window.location.replace('datapelanggan.php');
+            </script>
+            <?php
+        } else {
+            echo "Error: " . $deleteQuery . "<br>" . $conn->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "ID pelanggan tidak ditemukan";
     }
 } else {
     echo "ID pelanggan tidak ditemukan";

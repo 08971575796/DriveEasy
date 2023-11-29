@@ -111,37 +111,42 @@ $conn->close();
   
   <table class="table align-items-center table-flush">
     <thead class="thead-light">
-      <tr>
-        <th>ID</th>
-        <th>Nama</th>
-        <th>Alamat</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Aksi</th>
-      </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Aksi</th>
+        </tr>
     </thead>
     <tbody>
-      <?php
-      // Tampilkan data pelanggan dalam tabel
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          echo "<tr>";
-          echo "<td>" . $row["id_user"] . "</td>";
-          echo "<td>" . $row["username"] . "</td>";
-          echo "<td>" . $row["alamat"] . "</td>";
-          echo "<td>" . $row["email"] . "</td>";
-          echo "<td>" . $row["password"] . "</td>";
-          echo '<td>
-                  <a href="hapusdatapelanggan.php?id=' . $row["id_user"] . '" class="btn btn-sm btn-danger">Hapus</a>
-                </td>';
-          echo "</tr>";
+        <?php
+        // Tampilkan data pelanggan dalam tabel
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["id_user"] . "</td>";
+                echo "<td>" . $row["username"] . "</td>";
+                echo "<td>" . $row["alamat"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+
+                // Enkripsi password untuk ditampilkan di tabel
+                $encryptedPassword = password_hash($row["password"], PASSWORD_DEFAULT);
+                echo "<td>" . $encryptedPassword . "</td>";
+
+                echo '<td>
+                        <a href="hapusdatapelanggan.php?id=' . $row["id_user"] . '" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>';
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>Tidak ada data pelanggan</td></tr>";
         }
-      } else {
-        echo "<tr><td colspan='6'>Tidak ada data pelanggan</td></tr>";
-      }
-      ?>
+        ?>
     </tbody>
-  </table>
+</table>
+
 </div>
 
 <script>

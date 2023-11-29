@@ -179,7 +179,6 @@ if ($result) {
 // Tutup koneksi database
 $conn->close();
 ?>
-
     <section class="ftco-section ftco-about">
 			<div class="container">
 				<div class="row no-gutters">
