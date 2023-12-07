@@ -1,11 +1,6 @@
 <?php
-$host = "localhost"; // Ganti dengan host MySQL Anda
-$username = "root"; // Ganti dengan username MySQL Anda
-$password = ""; // Ganti dengan password MySQL Anda
-$database = "driveeasy2"; // Ganti dengan nama database yang ingin Anda akses
+include("koneksi.php");
 
-// Membuat koneksi ke MySQL
-$conn = new mysqli($host, $username, $password, $database);
 
 // Periksa koneksi
 if ($conn->connect_error) {

@@ -1,12 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Establish database connection (adjust the credentials accordingly)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "driveeasy6";
+    include("koneksi.php");
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -14,17 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Get data from the form
     $idMobil = $_POST['editId'];
-    $namaMobil = $_POST['editNamaMobil'];
-    $editMerk = $_POST['editMerk'];
+    $editType = $_POST['editType'];
+    $editPlat = $_POST['editPlat'];
     $editWarna = $_POST['editWarna'];
-    $editTahun = $_POST['editTahun'];
-    $editCc = $_POST['editCc'];
+    $editTahunProduksi = $_POST['editTahunProduksi'];
+    $editIsiSilinder = $_POST['editIsiSilinder'];
     $editBahanBakar = $_POST['editBahanBakar'];
+    $editJumlahKursi = $_POST['editJumlahKursi'];
     $editHargaSewa = $_POST['editHargaSewa'];
     // Retrieve other form fields as needed
 
     // Update car data in the database
-    $sql = "UPDATE stock_mobil SET nama_mobil = '$namaMobil', merk = '$editMerk', warna = '$editWarna', tahun = '$editTahun', cc = '$editCc', bahan_bakar = '$editBahanBakar', harga_sewa = '$editHargaSewa' WHERE id_mobil = $idMobil";
+    $sql = "UPDATE detail_mobil SET type = '$editType', plat = '$editPlat', warna = '$editWarna', thn_produksi = '$editTahunProduksi', isi_silinder = '$editIsiSilinder', bahan_bakar = '$editBahanBakar', jumlah_kursi = '$editJumlahKursi', harga_sewa = '$editHargaSewa' WHERE id_detail_mobil = $idMobil";
+
 
     if ($conn->query($sql) === TRUE) {
         echo "data mobil berhasil di update";

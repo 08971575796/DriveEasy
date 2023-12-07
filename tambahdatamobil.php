@@ -26,6 +26,25 @@
         padding: 8px;
         box-sizing: border-box;
     }
+  
+/* CSS untuk animasi sidebar brand */
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+/* Terapkan animasi putaran pada logo */
+.sidebar-brand-icon img {
+  animation: flipAnimation 2s linear infinite; /* Ubah durasi dan iterasi sesuai keinginan */
+}
+
 </style>
 
 </head>
@@ -36,7 +55,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
-          <img src="images/logo/DriveEasy_putih.png">
+          <img src="images/Ellipse213.png">
         </div>
         <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
@@ -104,28 +123,31 @@
                  
                   <form method="POST" action="prosestambahmobil.php">
                     <div class="mb-3" id="carForm">
-                      <label for="exampleInputNamaMobil1" class="form-label">Nama Mobil</label>
-                      <input type="text" class="form-control" id="exampleInputNamaMobil1" name="nama_mobil" >
+                      <label for="exampleInputType1" class="form-label">Type</label>
+                      <input type="text" class="form-control" id="exampleInputType1" name="type" >
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputMerek1" class="form-label">Merk</label>
-                        <input type="text" class="form-control" name="merk" id="exampleInputMerek1">
+                        <label for="exampleInputPlat1" class="form-label">Plat</label>
+                        <input type="text" class="form-control" name="plat" id="exampleInputPlat1">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputAlamat1" class="form-label">Warna</label>
                       <input type="nama" class="form-control" id="exampleInputAlamat1" name="warna">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputTelepon1" class="form-label">Tahun</label>
-                      <input type="nama" class="form-control" id="exampleInputTelepon1" name="tahun">
+                      <label for="exampleInputTelepon1" class="form-label">Tahun Produksi</label>
+                      <input type="nama" class="form-control" id="exampleInputTelepon1" name="thn_produksi">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputTempatduduk1" class="form-label">Cc</label>
-                      <input type="text" class="form-control" id="exampleInputTempatduduk1" name="cc" >
+                      <label for="exampleInputTempatduduk1" class="form-label">Isi Silinder</label>
+                      <input type="text" class="form-control" id="exampleInputTempatduduk1" name="isi_silinder" >
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputTelepon1" class="form-label">Bahan Bakar</label>
                       <input type="nama" class="form-control" id="exampleInputTelepon1" name="bahan_bakar" >
+                      <div class="mb-3">
+                      <label for="exampleInputJumlahKursi1" class="form-label">Jumlah Kursi</label>
+                      <input type="nama" class="form-control" id="exampleInputJumlahKursi1" name="jumlah_kursi" >
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputhargasewa1" class="form-label">Harga Sewa</label>

@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="images/logo/DriveEasy_putih.png" rel="icon">
-  <title>Drive Easy - Data Transaksi</title>
+  <title>Drive Easy - Data Mobil & Transaksi</title>
   <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -52,6 +52,23 @@
     text-align: center;
     width: 100px; /* Ganti dengan lebar yang sesuai */
 }
+/* CSS untuk animasi sidebar brand */
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+/* Terapkan animasi putaran pada logo */
+.sidebar-brand-icon img {
+  animation: flipAnimation 2s linear infinite; /* Ubah durasi dan iterasi sesuai keinginan */
+}
 
     </style>
 
@@ -63,7 +80,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
-          <img src="images/logo/DriveEasy_putih.png">
+          <img src="images/Ellipse213.png">
         </div>
         <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
@@ -87,8 +104,8 @@
         <div id="collapseTable" class="collapse show" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-            <a class="collapse-item active" href="datapelanggan.php">Data Pelanggan</a>
-            <a class="collapse-item" href="datamobildantransaksi.php">Data Mobil & Transaksi</a>
+            <a class="collapse-item" href="datapelanggan.php">Data Pelanggan</a>
+            <a class="collapse-item active" href="datamobildantransaksi.php">Data Mobil & Transaksi</a>
           </div>
         </div>
       </li>
@@ -143,12 +160,13 @@
       <thead class="thead-light">
         <tr>
           <th>Id</th>
-          <th>Nama Mobil</th>
-          <th>Merek</th>
+          <th>type</th>
+          <th>Plat</th>
           <th>Warna</th>
-          <th>Tahun</th>
-          <th>Cc</th>
+          <th>Tahun Produksi</th>
+          <th>Isi Silinder</th>
           <th>Bahan Bakar</th>
+          <th>Jumlah Kursi</th>
           <th>Harga Sewa</th>
           <th>Aksi</th>
         </tr>
@@ -276,18 +294,20 @@
         <h2>Edit Data Mobil</h2>
         <form id="carForm">
             <input type="hidden" id="editId" name="editId">
-            <label for="editNamaMobil">Nama Mobil:</label>
-            <input type="text" id="editNamaMobil" name="editNamaMobil" required><br>
-            <label for="editMerk">Merek:</label>
-            <input type="text" id="editMerk" name="editMerk" required><br>
+            <label for="editType">Type:</label>
+            <input type="text" id="editType" name="editType" required><br>
+            <label for="editPlat">Plat:</label>
+            <input type="text" id="editPlat" name="editPlat" required><br>
             <label for="editWarna">Warna:</label>
             <input type="text" id="editWarna" name="editWarna" required><br>
-            <label for="editTahun">Tahun:</label>
-            <input type="number" id="editTahun" name="editTahun" required><br>
-            <label for="editCc">Cc:</label>
-            <input type="text" id="editCc" name="editCc" required><br>
+            <label for="editTahunProduksi">Tahun:</label>
+            <input type="number" id="editTahunProduksi" name="editTahunProduksi" required><br>
+            <label for="editIsiSilinder">Isi Silinder:</label>
+            <input type="text" id="editIsiSilinder" name="editIsiSilinder" required><br>
             <label for="editBahanBakar">Bahan Bakar:</label>
             <input type="text" id="editBahanBakar" name="editBahanBakar" required><br>
+            <label for="editJumlahKursi">Jumlah Kursi:</label>
+            <input type="text" id="editJumlahKursi" name="editJumlahKursi" required><br>
             <label for="editHargaSewa">Harga Sewa:</label>
             <input type="text" id="editHargaSewa" name="editHargaSewa" required><br>
             <!-- Add other input fields as needed -->
@@ -316,16 +336,17 @@
                 row.innerHTML = `
                     <td>${index + 1}</td>
                     
-                    <td>${car.nama_mobil}</td>
-                    <td>${car.merk}</td>
+                    <td>${car.type}</td>
+                    <td>${car.plat}</td>
                     <td>${car.warna}</td>
-                    <td>${car.tahun}</td>
-                    <td>${car.cc}</td>
+                    <td>${car.thn_produksi}</td>
+                    <td>${car.isi_silinder}</td>
                     <td>${car.bahan_bakar}</td>
+                    <td>${car.jumlah_kursi}</td>
                     <td>${car.harga_sewa}</td>
                     <td>
-                        <a href="#" class="btn btn-warning" onclick="editData(${car.id_mobil})">Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger" onclick="hapusData(${car.id_mobil})">Hapus</a>
+                        <a href="#" class="btn btn-warning" onclick="editData(${car.id_detail_mobil})">Edit</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="hapusData(${car.id_detail_mobil})">Hapus</a>
                     </td>
                 `;
                 tableBody.appendChild(row);
@@ -354,13 +375,14 @@
                 .then(response => response.json())
                 .then(car => {
                     // Populate the edit form with the retrieved data
-                    document.getElementById('editId').value = car.id_mobil;
-                    document.getElementById('editNamaMobil').value = car.nama_mobil;
-                    document.getElementById('editMerk').value = car.merk;
+                    document.getElementById('editId').value = car.id_detail_mobil;
+                    document.getElementById('editType').value = car.type;
+                    document.getElementById('editPlat').value = car.plat;
                     document.getElementById('editWarna').value = car.warna;
-                    document.getElementById('editTahun').value = car.tahun;
-                    document.getElementById('editCc').value = car.cc;
+                    document.getElementById('editTahunProduksi').value = car.tahun_produksi;
+                    document.getElementById('editIsiSilinder').value = car.isi_silinder;
                     document.getElementById('editBahanBakar').value = car.bahan_bakar;
+                    document.getElementById('editJumlahKursi').value = car.jumlah_kursi;
                     document.getElementById('editHargaSewa').value = car.harga_sewa;
                     // Populate other form fields as needed
 
@@ -402,12 +424,8 @@
     </script>
 <?php
 // Koneksi ke database (gantilah dengan informasi koneksi Anda)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "driveeasy6";
+include("koneksi.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Periksa koneksi
 if ($conn->connect_error) {
@@ -444,49 +462,50 @@ $conn->close();
     });
 </script>
 
-        <div class="table-responsive p-3">
-            <table class="table table-bordered table-hover" id="dataTableHover">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Id</th>
-                        <th>Nama</th>
-                        <th>ID User</th>
-                        <th>Nomor Hp</th>
-                        <th>Tanggal</th>
-                        <th>Jam</th>
-                        <th>Foto KTP</th>
-                        <th>ID Mobil</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    // Tampilkan data transaksi dalam tabel
-                    $row_color = "even";
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $row_color = ($row_color == "odd") ? "even" : "odd";
-                            echo "<tr class='" . $row_color . "'>";
-                            echo "<td>" . $row["id_booking"] . "</td>";
-                            echo "<td>" . $row["nama"] . "</td>";
-                            echo "<td>" . $row["id_user"] . "</td>";
-                            echo "<td>" . $row["no_hp"] . "</td>";
-                            echo "<td>" . $row["tanggal"] . "</td>";
-                            echo "<td>" . $row["jam"] . "</td>";
-                            echo "<td><img src='" . $row["foto_ktp"] . "' alt='Foto KTP' style='max-width: 100px;'></td>";
-                            echo "<td>" . $row["id_mobil"] . "</td>";
-                            echo "<td><a href='proseshapusdatatransaksi.php?id=" . $row["id_booking"] . "' class='btn btn-sm btn-danger'>Hapus</a></td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='9'>Tidak ada data transaksi</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
+<div class="table-responsive p-3">
+    <table class="table table-bordered table-hover" id="dataTableHover">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Nama</th>
+                <th>ID User</th>
+                <th>Nomor Hp</th>
+                <th>Tanggal</th>
+                <th>Jam</th>
+                <th>Foto KTP</th>
+                <th>ID Mobil</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Tampilkan data transaksi dalam tabel
+            $row_color = "even";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $row_color = ($row_color == "odd") ? "even" : "odd";
+                    echo "<tr class='" . $row_color . "'>";
+                    echo "<td>" . $row["id_booking"] . "</td>";
+                    echo "<td>" . $row["nama"] . "</td>";
+                    echo "<td>" . $row["id_user"] . "</td>";
+                    echo "<td>" . $row["no_hp"] . "</td>";
+                    echo "<td>" . $row["tanggal"] . "</td>";
+                    echo "<td>" . $row["jam"] . "</td>";
+                    // Assuming images are in the same directory or a subdirectory
+                    echo "<td><img src='images/" . $row["foto_ktp"] . "' alt='Foto KTP' style='max-width: 100px;'></td>";
+                    echo "<td>" . $row["id_mobil"] . "</td>";
+                    // Link to delete action with the corresponding ID
+                    echo "<td><a href='proseshapusdatatransaksi.php?id=" . $row["id_booking"] . "' class='btn btn-sm btn-danger'>Hapus</a></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='9'>Tidak ada data transaksi</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
 </div>
+
         </div>
         <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

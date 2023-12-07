@@ -8,10 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tahun = $_POST['tahun'];
     $cc = $_POST['cc'];
     $bahanBakar = $_POST['bahan_bakar'];
+    $jumlahKursi = $_POST['jumlah_kursi'];
     $hargaSewa = $_POST['harga_sewa'];
 
     // Query untuk mengupdate data mobil
-    $sql = "UPDATE mobil SET nama_mobil='$nama_mobil', merk='$merk', warna='$warna', tahun='$tahun', cc='$cc', bahan_bakar='$bahan_bakar', harga_sewa='$harga_sewa' 
+    $sql = "UPDATE stock_mobil SET nama_mobil='$nama_mobil', merk='$merk', warna='$warna', tahun='$tahun', cc='$cc', bahan_bakar='$bahan_bakar', jumlah_kursi='$jumlah_kursi', harga_sewa='$harga_sewa' 
             WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {

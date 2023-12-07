@@ -165,12 +165,8 @@
     $email = $_SESSION['email'];
 
     // Koneksi ke basis data (gantilah dengan informasi koneksi yang sesuai)
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $database = "driveeasy6";
+    include("koneksi.php");
 
-    $conn = mysqli_connect($host, $user, $password, $database);
 
     // Periksa koneksi basis data
     if (!$conn) {

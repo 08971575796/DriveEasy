@@ -250,6 +250,7 @@
   width: 1250px;
   height: 1024px;
   position: relative;
+  
 }
 
 .sign-up .overlap {
@@ -630,13 +631,13 @@
 
 .sign-up .text-wrapper-4 {
     position: relative;
-    top: 80px;
+    top: 10px;
     color: #000000;
 }
 
 .sign-up .text-wrapper-5 {
     position: relative;
-    top: 80px;
+    top: 10px;
     color: #ff8a2d;
 }
 

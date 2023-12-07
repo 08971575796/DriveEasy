@@ -1,11 +1,7 @@
 <?php
 // Establish database connection (adjust the credentials accordingly)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "driveeasy6";
+include("koneksi.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -14,7 +10,7 @@ if ($conn->connect_error) {
 $idMobil = $_GET['id'];
 
 // Fetch car data based on ID
-$sql = "SELECT * FROM stock_mobil WHERE id_mobil = $idMobil";
+$sql = "SELECT * FROM detail_mobil WHERE id_detail_mobil = $idMobil";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

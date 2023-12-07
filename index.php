@@ -24,6 +24,27 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+  <style>
+    .request-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%; /* Atur tinggi sesuai kebutuhan */
+    }
+
+    .whast-app {
+        text-align: center;
+    }
+
+    .ellipse {
+        /* Sesuaikan gaya gambar */
+    }
+
+    .chat-admin {
+        color: #000;
+    }
+</style>
   <body>
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -64,17 +85,15 @@
     				<div class="row no-gutters">
 	  					<div class="col-md-4 d-flex align-items-center">
 	  					<form action="#" class="request-form ftco-animate" style="background-color: #ffe688;">
-              <h2 style="color: #000;">
-              <div class="block-18">
-                <div class="row">
-                    <div class="whast-app">
-                        <img class="ellipse" src="images/Ellipse 213.png" />
-                        <div class="chat-admin">DriveEasy<br />Download untuk android</div>
-                        <button class="btn btn-sm btn-danger download">
-                            <div class="text-wrapper">Download</div>
-                        </button>
-                    </div>
-                </div>
+    <h2 style="color: #000;"></h2>
+    <div class="block-18">
+        <div class="row">
+            <div class="whast-app">
+                <img class="ellipse" src="images/Ellipse213.png" alt="Ellipse Image" />
+                <div class="chat-admin"style="font-weight: bold;">Drive Easy<br/>Kemudahan Menyewa Mobil Dengan Satu Klik</div>
+            </div>
+        </div>
+    
             </div>
         </div>
     </h2>
@@ -115,7 +134,6 @@
   		</div>
     </section>
 
-
     <section class="ftco-section ftco-no-pt bg-light">
     	<div class="container">
     		<div class="row justify-content-center">
@@ -126,12 +144,8 @@
         </div>
     		<?php
 // Koneksi ke database (gantilah dengan informasi koneksi Anda)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "driveeasy6";
+include("koneksi.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Periksa koneksi
 if ($conn->connect_error) {
@@ -160,7 +174,7 @@ if ($result) {
                             <span class="cat">' . $row['Status'] . '</span>
                             
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Sewa Sekarang Di Mobile</a></p>
                     </div>
                 </div>
             </div>';
@@ -398,8 +412,8 @@ $conn->close();
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">Jl. Yos Sudarso No.94, Ganung Kidul, Kec. Nganjuk, Kabupaten Nganjuk, Jawa Timur,Kode pos:64419</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">085857776669</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text"> iqbalfauzi0897155796@gmail.com</span></a></li>
+	                <li><a><span class="icon icon-phone"></span><span class="text">085857776669</span></a></li>
+	                <li><a><span class="icon icon-envelope"></span><span class="text">DriveEasy@gmail.com</span></a></li>
 	              </ul>
 	            </div>
             </div>

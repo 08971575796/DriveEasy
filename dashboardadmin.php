@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="images/logo/DriveEasy_putih.png" rel="icon">
-  <title>DriveEasy - Dashboard</title>
+  <title>DriveEasy - Dashboard Admin</title>
   <link href="scss/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -41,6 +41,24 @@
         .custom-text-color {
             color: #000; /* Black color */
         }
+        /* CSS untuk animasi sidebar brand */
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+/* Terapkan animasi putaran pada logo */
+.sidebar-brand-icon img {
+  animation: flipAnimation 2s linear infinite; /* Ubah durasi dan iterasi sesuai keinginan */
+}
+
     </style>
 </head>
 
@@ -50,7 +68,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
-          <img src="images/logo/DriveEasy_putih.png">
+          <img src="images/Ellipse213.png">
         </div>
         <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
@@ -107,12 +125,12 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="images/boy.png" style="max-width: 60px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <span class="ml-2 d-none d-lg-inline custom-text-color small">Admin</span>
+                <span class="ml-2 d-none d-lg-inline custom-text-color small"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="profil.php">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Profil
                 </a>
                
                
@@ -132,12 +150,7 @@
           <div class="row mb-3">
           <?php
               // Koneksi ke database
-              $servername = "localhost";
-              $username = "root"; // Ganti dengan username MySQL Anda
-              $password = ""; // Ganti dengan password MySQL Anda
-              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
-
-              $conn = new mysqli($servername, $username, $password, $dbname);
+              include("koneksi.php");
 
               // Cek koneksi
               if ($conn->connect_error) {
@@ -145,7 +158,7 @@
               }
 
               // Query untuk mengambil nilai "Data mobil" dari database
-              $sql = "SELECT COUNT(*) as total_data FROM stock_mobil";
+              $sql = "SELECT COUNT(*) as total_data FROM detail_mobil";
               $result = $conn->query($sql);
 
               if ($result->num_rows > 0) {
@@ -176,12 +189,8 @@
             </div>
             <?php
           // Koneksi ke database
-              $servername = "localhost";
-              $username = "root"; // Ganti dengan username MySQL Anda
-              $password = ""; // Ganti dengan password MySQL Anda
-              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
+          include("koneksi.php");
 
-              $conn = new mysqli($servername, $username, $password, $dbname);
 
               // Cek koneksi
               if ($conn->connect_error) {
@@ -220,12 +229,8 @@
             </div>
             <?php
               // Koneksi ke database
-              $servername = "localhost";
-              $username = "root"; // Ganti dengan username MySQL Anda
-              $password = ""; // Ganti dengan password MySQL Anda
-              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
+              include("koneksi.php");
 
-              $conn = new mysqli($servername, $username, $password, $dbname);
 
               // Cek koneksi
               if ($conn->connect_error) {
@@ -265,12 +270,8 @@
             <!-- Pending Requests Card Example -->
             <?php
               // Koneksi ke database
-              $servername = "localhost";
-              $username = "root"; // Ganti dengan username MySQL Anda
-              $password = ""; // Ganti dengan password MySQL Anda
-              $dbname = "driveeasy6"; // Ganti dengan nama database Anda
+              include("koneksi.php");
 
-              $conn = new mysqli($servername, $username, $password, $dbname);
 
               // Cek koneksi
               if ($conn->connect_error) {
@@ -330,12 +331,8 @@
                     <tbody>
                     <?php
                       // Koneksi ke database 
-                      $servername = "localhost";
-                      $username = "root";
-                      $password = "";
-                      $dbname = "driveeasy6";
+                      include("koneksi.php");
 
-                      $conn = new mysqli($servername, $username, $password, $dbname);
 
                       // Periksa koneksi
                       if ($conn->connect_error) {
@@ -381,12 +378,8 @@
                   
                   <?php
                       // Koneksi ke database 
-                      $servername = "localhost";
-                      $username = "root";
-                      $password = "";
-                      $dbname = "driveeasy6";
+                      include("koneksi.php");
 
-                      $conn = new mysqli($servername, $username, $password, $dbname);
 
                       // Periksa koneksi
                       if ($conn->connect_error) {

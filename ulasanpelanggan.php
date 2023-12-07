@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
-          <img src="images/logo/DriveEasy_putih.png">
+          <img src="images/Ellipse213.png">
         </div>
         <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
@@ -88,12 +88,8 @@
   <div>
     <?php
     // Koneksi ke database (gantilah dengan informasi koneksi Anda)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "driveeasy6";
+    include("koneksi.php");
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Periksa koneksi
     if ($conn->connect_error) {
@@ -115,6 +111,7 @@
         echo '<thead>';
         echo '<tr>';
         echo '<th>ID Ulasan</th>';
+        echo '<th>Nama User</th>';
         echo '<th>ID User</th>';
         echo '<th>Ulasan</th>';
         echo '</tr>';
@@ -124,6 +121,7 @@
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $row["id_ulasan"] . '</td>';
+            echo '<td>' . $row["nama_user"] . '</td>';
             echo '<td>' . $row["id_user"] . '</td>';
             echo '<td>' . $row["text_ulasan"] . '</td>';
             echo '</tr>';
@@ -160,6 +158,25 @@
     color: #555;
     cursor: pointer;
   }
+
+/* CSS untuk animasi sidebar brand */
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+/* Terapkan animasi putaran pada logo */
+.sidebar-brand-icon img {
+  animation: flipAnimation 2s linear infinite; /* Ubah durasi dan iterasi sesuai keinginan */
+}
+
 </style>
 
 <script>

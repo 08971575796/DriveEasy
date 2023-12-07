@@ -1,12 +1,7 @@
 <?php
 // Sesuaikan konfigurasi database Anda
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "driveeasy6";
+include("koneksi.php");
 
-// Buat koneksi ke database
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Periksa koneksi
 if ($conn->connect_error) {

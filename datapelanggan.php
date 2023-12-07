@@ -1,11 +1,7 @@
 <?php
 // Koneksi ke database 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "driveeasy6";
+include("koneksi.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Periksa koneksi
 if ($conn->connect_error) {
@@ -34,14 +30,33 @@ $conn->close();
   <link href="scss/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
 </head>
+<style>
 
+/* CSS untuk animasi sidebar brand */
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+/* Terapkan animasi putaran pada logo */
+.sidebar-brand-icon img {
+  animation: flipAnimation 2s linear infinite; /* Ubah durasi dan iterasi sesuai keinginan */
+}
+</style>
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #ffe688;" href="dashboardadmin.php">
         <div class="sidebar-brand-icon">
-          <img src="images/logo/DriveEasy_putih.png">
+          <img src="images/Ellipse213.png">
         </div>
         <div class="sidebar-brand-text mx-3" style="color: #000;">Drive Easy</div>
       </a>
@@ -189,29 +204,6 @@ $conn->close();
   document.getElementById('searchInput').addEventListener('input', searchTable);
 </script>
 
-                    
-          <!-- Modal Logout -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.php" class="btn btn-primary">Logout</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
         <!---Container Fluid-->
       </div>
@@ -219,8 +211,9 @@ $conn->close();
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a target="_blank">Kelompok 4C</a></b>
+            <span>Password di sembunyikan karena alasan keamanan!</span>
+            <span> <script> </script>
+              <b><a target="_blank"> </a></b>
             </span>
           </div>
         </div>

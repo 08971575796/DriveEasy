@@ -121,12 +121,8 @@
         </div>
     		<?php
 // Koneksi ke database (gantilah dengan informasi koneksi Anda)
-$servername = "103.247.11.134";
-$username = "root";
-$password = "tifnganjuk321";
-$dbname = "tifz1761_driveeasy";
+include("koneksi.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Periksa koneksi
 if ($conn->connect_error) {
